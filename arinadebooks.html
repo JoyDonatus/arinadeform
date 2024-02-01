@@ -7,9 +7,11 @@
     <style>
         body{
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 90px;
+            padding-left: 10px;
+            padding-right: 10px;
             background: url("https://lh3.googleusercontent.com/pw/ABLVV850NXpc98568K4rwte-OfZfY-aPpqvOa18RNN1BtYhMsEMYwmCvuKBfG7IgrVeDuopo8b0R3QZvu1uXA0B_RXMoIv3IrKRBfHoX_1TsaNs-_4QdLPh_VAIlENNRymQmt42GvXukfgjewvL6CSw75WV1=w922-h619-s-no-gm?authuser=0");
             background-repeat: no-repeat;
             background-size: cover;
@@ -25,14 +27,27 @@
         #myBook{
         margin: 20px 0 20px 0;
         }
+
+        #backButton{
+            width: 100%;
+            display: flex;
+            margin-bottom: 30px;
+            flex-direction: row;
+            align-items: center;
+            justify-content: left;
+            background-color: #FFFFFF00;
+        }
     </style>
 </head>
 <body>
-        <div id="containingDiv">
-            <a href="./mybooks/ARINADELONDON - 30 Day Diet Cleanse Plan.pdf" download="ARINADELONDON - 30 Day Diet Cleanse Plan.pdf">
-                <img src="https://lh3.googleusercontent.com/pw/ABLVV87HY15GUoYRAXWfHz29tGCfB5r6cQblX4Fq1y8d9kmFe_9zHipojGI4zVgGtOvM7o2Hz9LJ1yw3CikbnnDHAu-AdyAn0iopuGYgf2hgkpG9v9yaio7PRfH6CJzkJunKsocM20Hvv4GQPVaB2nlIRnDx=w100-h100-s-no-gm?authuser=0" alt="download" width="50" height="50"></a>
-
-            <img id="myBook" src="https://lh3.googleusercontent.com/pw/ABLVV841udYookQ5gVwrRDB2Nrow6bVaq49tLQtJ98JIRFF2vbyGvDtAUa8iQU9laTtnS_TqSUNqSneJaSsYLniaJJYCUIINY0PZjS5vw5Zk33sXqLRbNaJd176Xe61L6oogE2zARNI2c_sK581djqo3-XkL=w226-h292-s-no-gm?authuser=0" alt="">
-        </div>
+    <div id="backButton" >
+        <a href="http://resource-arinade.com" style="margin: 20px 0 0 0;" id="backAnchor"><img src="https://lh3.googleusercontent.com/pw/ABLVV87PCilpbWYoSOEDhh7I202zoGxzQ0fjPoS-bqgUU5cJpLFM8gF6A9gzGuHeM2oF27K3btJJr9hAYD8xonpeLZvSIiyllFG5A9wWnXb_0NG8ceiZ3DnIMoCuR7y4GMEfSYJw9Ly6ue1JeKO6mptZruC2=w248-h203-s-no-gm?authuser=0" alt="backbutton" width="30" height="30"></a>
+    </div>
+    <div id="containingDiv">
+        <a href="./mybooks/ARINADELONDON - 30 Day Diet Cleanse Plan.pdf" download="ARINADELONDON - 30 Day Diet Cleanse Plan.pdf">
+            <img src="https://lh3.googleusercontent.com/pw/ABLVV87HY15GUoYRAXWfHz29tGCfB5r6cQblX4Fq1y8d9kmFe_9zHipojGI4zVgGtOvM7o2Hz9LJ1yw3CikbnnDHAu-AdyAn0iopuGYgf2hgkpG9v9yaio7PRfH6CJzkJunKsocM20Hvv4GQPVaB2nlIRnDx=w100-h100-s-no-gm?authuser=0" alt="download" width="50" height="50">
+        </a>
+        <img id="myBook" src="https://lh3.googleusercontent.com/pw/ABLVV841udYookQ5gVwrRDB2Nrow6bVaq49tLQtJ98JIRFF2vbyGvDtAUa8iQU9laTtnS_TqSUNqSneJaSsYLniaJJYCUIINY0PZjS5vw5Zk33sXqLRbNaJd176Xe61L6oogE2zARNI2c_sK581djqo3-XkL=w226-h292-s-no-gm?authuser=0" alt="">
+    </div>
 </body>
 </html>
