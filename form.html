@@ -27,6 +27,13 @@
             font-weight: 700;
         }
 
+        #registrationLink, #paymentLink, #reviewLink{
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 19px;
+            letter-spacing: 0em;
+        }
+
         .navLink :hover{
             text-decoration: underline;
         }
@@ -35,7 +42,6 @@
             border: none;
             text-align: right;
             outline: #FFFFFF00;
-            width: 65%;
         }
 
         select > options{
@@ -46,12 +52,23 @@
             display: flex;
             flex-direction: row;
             gap: 50px;
-            align-items: normal;
-            justify-content: space-around;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
 
         .inputDiv{
-            border-bottom: 1px solid rgba(0, 0, 0, .07);
+            border-bottom: 1px solid rgba(189, 189, 189);
+            padding: 5px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .inputDiv1{
+            border-bottom: 1px solid rgba(211, 211, 211);
             padding: 5px;
             display: flex;
             flex-direction: row;
@@ -65,8 +82,48 @@
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
-            padding: 20px;
             margin-bottom: 40px;
+            padding-top: 20px;
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+
+        .secondSection, .navDiv{
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .subHeadings{
+            color: #222222;
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 29px;
+            letter-spacing: 0em;
+            margin-bottom: 10px;
+        }
+
+        .subHeadingParagraph{
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 19px;
+            letter-spacing: 0em;
+        }
+
+        .subSubHeading{
+            color: rgba(34,34, 34, 0.8);
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 17px;
+            letter-spacing: 0em;
+            margin-bottom: 20px;
+        }
+
+        .labels{
+            color: rgba(34,34, 34, 0.8);
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 19px;
+            letter-spacing: 0em;
         }
 
         .orderReview{
@@ -75,13 +132,47 @@
             align-items: center;
             justify-content: center;
         }
+
+        .summaryTotal{
+            color: #222222;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 19px;
+            letter-spacing: 0em;
+        }
+
+        .subtotal{
+            color: #222222;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 14px;
+            letter-spacing: 0em;
+        }
+
+        .price{
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 17px;
+            letter-spacing: 0em;
+        }
+
+        #registrationDiv{
+            width: 70%;
+            margin-left: 80px;
+        }
+
+
+        #orderReviewDiv{
+            display: flex;
+            flex-direction: column;
+        }
         
         #countryLabel, #countryLabels{
             display: inline-block;
         }
 
         .telPhoneInputDiv{
-            border-bottom: 1px solid rgba(0, 0, 0, .07);
+            border-bottom: 1px solid rgba(189, 189, 189);
             display: flex;
             flex-direction: column; 
             justify-content: flex-start;
@@ -92,8 +183,9 @@
             margin-bottom: 20px;;
         }
 
-        form, .orderReview{
-            width: 50%;
+        #form1, .orderReview{
+            width: 100%;
+            height: 100%;
         }
 
 
@@ -102,7 +194,7 @@
 <body>
     <section class="navDiv" style="border: none; width: 100%;">  
         <div>
-            <a class="navLink" id="registrationLink" href="#registrationDiv"><button>REGISTRATION</button></a>
+            <a class="navLink" href="#registrationDiv"><button id="registrationLink">REGISTRATION</button></a>
             <button id="firstNavigationArrow" disabled>></button>
             <a class="navLink" href="#paymentDiv"><button id="paymentLink" disabled>PAYMENT</button></a>
             <button id="secondNavigationArrow" disabled>></button>
@@ -116,57 +208,59 @@
             </select>
         </div>
     </section>
-    <section>
+    <section class="secondSection" style="width: 100%;">
         <div class="containerDiv">
-            <form action="post">
+            <form id="form1">
+                <h1 id="msg"></h1>
                 <div id="registrationDiv" class="registrationDiv" style="display: block;">
-                    <h2>Registration</h2>
-                    <p>WHOIS privacy is included for all eligible domains, free of charge. <a style="text-decoration: none; color: #000000;" href="">Learn More</a></p>
+                    <h2 class="subHeadings">Registration</h2>
+                    <p style>WHOIS privacy is included for all eligible domains, free of charge. <a style="text-decoration: none; color: #222222;" href="">Learn More</a></p>
                     </br>
                     </br>
-                    <h4>CONTACT INFORMATION</h4>
+                    <h4 class="subSubHeading">CONTACT INFORMATION</h4>
                     <div class="inputDiv">
-                        <label for="">First Name</label>
-                        <input class="inputInfo" type="text" name="firstName" id="firstName" required="" value="">
+                        <label for="" class="labels">FirstName</label>
+                        <input class="inputInfo" type="text" name="FirstName" id="firstName" required="" value="">
                     </div>
                     <div class="inputDiv">
-                        <label for="">Last Name</label>
-                        <input class="inputInfo" type="text" name="lastName" id="lastName" required="" value="">
+                        <label for="" class="labels">LastName</label>
+                        <input class="inputInfo" type="text" name="LastName" id="lastName" required="" value="">
                     </div>
                     <div class="inputDiv">
-                        <label for="">Email Address</label>
-                        <input class="inputInfo" type="email" name="EMAIL" id="emailAddress" required="" value="">
+                        <label for="" class="labels">EmailAddress</label>
+                        <input class="inputInfo" type="email" name="EmailAddress" id="emailAddress" required="" value="">
                     </div>
                     <div class="telPhoneInputDiv">
-                        <label for="">Phone Number</label>
-                        <input class="inputInfo" id="phone" style="width: 100%;" type="tel" name="phone" required="" value="" />
+                        <label for="" class="labels">PhoneNumber</label>
+                        <input class="inputInfo" id="phone" style="width: 100%;" type="tel" name="PhoneNumber" required="" value="" />
                         <div class="alert alert-info" style="display: none;"></div>
                     </div>
                     </br>
-                    <h4>ADDRESS</h4>
-                    <div class="inputDiv">
-                        <label for="">Street Address</label>
-                        <input class="inputInfo" type="address" name="address" id="address" required="" value="">
+                    </br>
+                    <h4 class="subSubHeading">ADDRESS</h4>
+                    <div class="inputDiv1">
+                        <label for="" class="labels">StreetAddress</label>
+                        <input class="inputInfo" type="address" name="Address" id="address" required="" value="">
                     </div>
-                    <div class="inputDiv">
-                        <label for="">Apt/Suite (Optional)</label>
-                        <input class="inputInfo" type="text" name="apt/suite" value="">
+                    <div class="inputDiv1">
+                        <label for="" class="labels">Apt/Suite (Optional)</label>
+                        <input class="inputInfo" type="text" name="Apt_Suite" value="">
                     </div>
-                    <div class="inputDiv">
-                        <label for="">City</label>
+                    <div class="inputDiv1">
+                        <label for="" class="labels">City</label>
                         <input class="inputInfo" type="text" name="City" id="City" required="" value="">
                     </div>
-                    <div class="inputDiv">
-                        <label for="">State</label>
+                    <div class="inputDiv1">
+                        <label for="" class="labels">State</label>
                         <input class="inputInfo" type="text" name="State" id="state" required="" value="">
                     </div>
-                    <div class="inputDiv">
-                        <label for="">Postal Code</label>
-                        <input class="inputInfo" class="inputInfo" id="postalCode" name="postalcode" type="text">
+                    <div class="inputDiv1">
+                        <label for="" class="labels">PostalCode</label>
+                        <input class="inputInfo" class="inputInfo" id="postalCode" name="PostalCode" type="text">
                     </div>
-                    <div class="inputDiv">
-                    <label id="countryLabel" for="">Country</label>
-                    <select class="inputInfo" id="country" style="border: #FFFFFF00;" name="country" class="form-control">
+                    <div class="inputDiv1">
+                    <label id="countryLabel" for="" class="labels">Country</label>
+                    <select class="inputInfo" id="country" style="border: #FFFFFF00;" name="Country" class="form-control">
                     <option value="" selected disabled hidden >Choose your country</option>
                     <option value="Afghanistan">Afghanistan</option>
                     <option value="Åland Islands">Åland Islands</option>
@@ -414,20 +508,22 @@
                     <option value="Zimbabwe">Zimbabwe</option>
                     </select>
                     </div>
-                    <div class="inputDiv">
-                        <label for="">Organization (Optional)</label>
-                        <input class="inputInfo" type="text" name="Organization" id="Organization" value="">
+                    <div class="inputDiv1">
+                        <label for="" class="labels">Organization (Optional)</label>
+                        <input class="inputInfo" type="text" name="Organization" id="organization" value="">
                     </div>
-                    <a class="buttonLink" href="" ><button id="buttonLink" style="width: 239px; height: 57px; background-color: #222222; color: white; margin-top: 20px;" type="">Save and Continue</button></a>
+                        <input style="width: 239px; height: 57px; border: none; background-color: #222222; color: white; margin-top: 20px;" class="buttonLink" id="sub" type="submit" value="Save and Continue">
                     
-
+                    <!--<a class="buttonLink" href="" ><button id="buttonLink" style="width: 239px; height: 57px; background-color: #222222; color: white; margin-top: 20px;" type="">Save and Continue</button></a>-->
                 </div>
-                <div class="paymentDiv" id="paymentDiv" style="display: none;">
-                    <h2>Payment Information</h2>
-                    <p>All your payment information is securely submitted</p>
+            </form>
+            <form>
+                <!--<div class="paymentDiv" id="paymentDiv" style="display: none;">
+                    <h2 class="subHeadings">Payment Information</h2>
+                    <p class="subHeadingParagraph">All your payment information is securely submitted</p>
                     </br>
                     </br>
-                    <h4>CREDIT OR DEBIT CARD</h4>
+                    <h4 class="subSubHeading">CREDIT OR DEBIT CARD</h4>
                     <div class="inputDiv">
                         <label for="">Cardholder Name</label>
                         <input class="inputInfo" id="name" maxlength="20" type="text" required="" value="">
@@ -446,7 +542,7 @@
                     </div>
                     <p>You can pay with Visa, Mastercard, American, Express, JCB, or Diner’s Club. By saving your card
                         Details, you can save your information for future purchases, subscriptions and renewals.</p>
-                    <h4>BILLING ADDRESS</h4>
+                    <h4 class="subSubHeading">BILLING ADDRESS</h4>
                     <div class="inputDiv">
                         <label for="">Street Address</label>
                         <input class="inputInfo" type="address" name="address" id="address" required="" value="">
@@ -713,7 +809,7 @@
                         <label for="">Postal Code</label>
                         <input class="inputInfo" id="postalCode" name="postalcode" type="text">
                     </div>
-                    <h4>VAT STATUS (OPTIONAL)</h4>
+                    <h4 class="subSubHeading">VAT STATUS (OPTIONAL)</h4>
                     <div class="inputDivs">
                     <input class="inputInfo" style="width: 20px" type="checkbox" id="demoCheckbox" name="checkbox" value="1">
                     <label for="demoCheckbox"> I certify that my business is registered for VAT.</label>
@@ -724,7 +820,7 @@
                     
                 </div>
                 <div class="reviewDiv" style="display: none;" id="reviewDiv">
-                    <h2>Review Order</h2>
+                    <h2 class="subHeadings">Review Order</h2>
                     <p>All your payment information is securely submitted</p>
                     </br>
                     </br>
@@ -763,36 +859,36 @@
                             <input style="height: 57px; width: 211px; background-color: #222222; color: white;" type="submit" value="CONFIRM PAYMENT">
                         </div>    
                     </div>
-                </div>
+                </div>-->
             </form>
-            <div id="orderReview" class="orderReview" style="padding: 30px;">
-                <div style="width: 316px; height: 365px; background-color: white; padding: 10px;">
-                    <div class="inputDiv">
-                        <h4>Order Summary</h4>
+            <div id="orderReview" class="orderReview" style="width: 100%; height: 115vh; padding: 30px;">
+                <div id="orderReviewDiv" style=" background-color: white; width:50%">
+                    <div style="height: 40px; text-align: left; display: flex; align-items: flex-end; border-bottom: 1px solid rgba(239, 239, 239); padding: 5px;" >
+                        <h4 class="summaryTotal">Order Summary</h4>
                     </div> 
-                    <div class="inputDiv">
+                    <div class="inputDiv" style="height: 100px; border-bottom: 1px solid rgba(239, 239, 239);">
                         <div>
-                            <p>1 Gua sha Tool Set</p>
-                            <p>One time payment</p>
+                            <p style="font-weight: 500; font-size: 14px; line-height: 16.71px;">1 Gua sha Tool Set</p>
+                            <p class="subtotal">One time payment</p>
                         </div>
                         <div>
-                            <p>&#163 25</p>
-                        </div>
-                    </div>
-                    <div class="inputDiv" style="border: none;">
-                        <div>
-                            <p>Subtotal</p>
-                        </div>
-                        <div>
-                            <p>&#163 25</p>
+                            <p class="price">&#163 25</p>
                         </div>
                     </div>
-                    <div class="inputDiv" style="border: none;">
+                    <div style="display: flex; flex-direction: row; align-items: flex-start; justify-content: space-between; border: none; height: 120px; padding: 5px;">
                         <div>
-                            <p>Estimated Total</p>
+                            <p class="subtotal">Subtotal</p>
                         </div>
                         <div>
-                            <p>&#163 25</p>
+                            <p class="price">&#163 25</p>
+                        </div>
+                    </div>
+                    <div class="" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; border: none; height: 40px; padding: 5px;">
+                        <div>
+                            <h4 class="summaryTotal">Estimated Total</h4>
+                        </div>
+                        <div>
+                            <h4 class="summaryTotal">&#163 25</h4>
                         </div>
                     </div>
                 </div>
@@ -835,27 +931,41 @@
         const registrationDiv = document.querySelector("#registrationDiv");
         const paymentDiv = document.querySelector("#paymentDiv");
         const reviewDiv = document.querySelector("#reviewDiv");
-        const buttonLink = document.querySelector("#buttonLink");
-        const buttonLink1 = document.querySelector("#buttonLink1");
+        //const buttonLink = document.querySelector("#buttonLink");
+        //const buttonLink1 = document.querySelector("#buttonLink1");
 
-        buttonLink.onclick = function(e){
-            event.preventDefault();
-            firstNavigationArrow.disabled = false;
-            paymentLink.disabled = false;
-            paymentDiv.style.display = 'block';
-            registrationDiv.style.display = 'none';
-        }
-        buttonLink1.onclick = function(e){
-            event.preventDefault();
-            secondNavigationArrow.disabled = false;
-            reviewLink.disabled = false;
-            reviewDiv.style.display = 'block';
-            paymentDiv.style.display = 'none';
-            registrationDiv.style.display = 'none';
-        }
-
-
-
+        //buttonLink.onclick = function(e){
+            //event.preventDefault();
+            //firstNavigationArrow.disabled = false;
+            //paymentLink.disabled = false;
+            //paymentDiv.style.display = 'block';
+            //registrationDiv.style.display = 'none';
+        //}
+       // buttonLink1.onclick = function(e){
+            //event.preventDefault();
+           // secondNavigationArrow.disabled = false;
+           // reviewLink.disabled = false;
+           // reviewDiv.style.display = 'block';
+           // paymentDiv.style.display = 'none';
+           // registrationDiv.style.display = 'none';
+        //}
+    </script>
+    <script>
+        let form = document.querySelector("form");
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            //document.querySelector("#sub").value = "Submitting ..";
+            let data = new FormData(form);
+            fetch('https://script.google.com/macros/s/AKfycby1JrRwb6h_LbB0s0U5U_jlC6ixWS9cgtpupknN8i9uYOGQJuvl7WmAMtctpSHOdGAU/exec',{
+                method: "POST",
+                body: data
+            })
+            .then(res => res.text())
+            .then(data => {
+                window.location.href = "https://resource-arinade.com";
+                form.reset();
+            });
+        })
     </script>
 </body>
 </html>
