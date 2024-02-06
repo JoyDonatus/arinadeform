@@ -85,6 +85,7 @@
 
         .navDiv{
             display: flex;
+            width: 100%;
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
@@ -203,6 +204,24 @@
         }
         #sub{
             transition: all .3s ease-in-out;
+        }
+
+        @media only screen and (max-device-width: 1000px){
+            .containerDiv{
+                flex-direction: column-reverse;
+            }
+
+            .secondSection, .navDiv{
+                margin-left: 0;
+                margin-right: 0;
+                padding-right: 0;
+                padding-left: 0;
+            }
+
+            #registrationDiv{
+                width: 80%;
+                margin-left: 30px;
+            }
         }
     </style>
 </head>
