@@ -55,11 +55,11 @@
 
         .containerDiv{
             display: flex;
+            flex: 1;
             flex-direction: row;
             gap: 50px;
             align-items: center;
             justify-content: center;
-            gap: 10px;
         }
 
         .inputDiv{
@@ -213,10 +213,9 @@
             </select>
         </div>
     </section>
-    <section class="secondSection" style="width: 100%;">
+    <section class="secondSection" style="width: 100%; display: flex;">
         <div class="containerDiv">
             <form id="form1">
-                <h1 id="msg"></h1>
                 <div id="registrationDiv" class="registrationDiv" style="display: block;">
                     <h2 class="subHeadings">Registration</h2>
                     <p style>WHOIS privacy is included for all eligible domains, free of charge. <a style="text-decoration: none; color: #222222;" href="">Learn More</a></p>
@@ -522,8 +521,8 @@
                     <!--<a class="buttonLink" href="" ><button id="buttonLink" style="width: 239px; height: 57px; background-color: #222222; color: white; margin-top: 20px;" type="">Save and Continue</button></a>-->
                 </div>
             </form>
-            <form>
-                <!--<div class="paymentDiv" id="paymentDiv" style="display: none;">
+            <!--<form>
+                <div class="paymentDiv" id="paymentDiv" style="display: none;">
                     <h2 class="subHeadings">Payment Information</h2>
                     <p class="subHeadingParagraph">All your payment information is securely submitted</p>
                     </br>
@@ -865,8 +864,8 @@
                         </div>    
                     </div>
                 </div>-->
-            </form>
-            <div id="orderReview" class="orderReview" style="width: 100%; height: 115vh; padding: 30px;">
+            <!--</form>-->
+            <div id="orderReview" class="orderReview" style="width: 100%;">
                 <div id="orderReviewDiv" style=" background-color: white; width:50%">
                     <div style="height: 40px; text-align: left; display: flex; align-items: flex-end; border-bottom: 1px solid rgba(239, 239, 239); padding: 5px;" >
                         <h4 class="summaryTotal">Order Summary</h4>
