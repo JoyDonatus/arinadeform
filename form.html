@@ -7,223 +7,19 @@
     <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
-    <style>
-        *{
-            font-family: SF Pro Display, sans-serif;
-            margin: 0;
-            padding: 0;
+    <link rel="stylesheet" href="./formstyle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        function receiveMessage(event){
+            console.log(event.data);
+            if(event.data === 'Hide'){
+                $('containerDiv').hide();
+            }
         }
-
-        body{
-            width: 100%;
-            height: 100vh;
-            background-color: #FFFFFF;
-        }
-
-        .hidden{
-            display: none;
-        }
-        .visible{
-            display: block;
-        }
+        window.addEventListener('message', receiveMessage, false);
+        console.log('listener added');
+    </script>
         
-        button{
-            border: none;
-            background-color: #FFFFFF00;
-            font-weight: 700;
-        }
-
-        #registrationLink, #paymentLink, #reviewLink{
-            font-size: 16px;
-            font-weight: 600;
-            line-height: 19px;
-            letter-spacing: 0em;
-        }
-
-        .navLink :hover{
-            text-decoration: underline;
-        }
-
-        .inputInfo {
-            border: none;
-            text-align: right;
-            outline: #FFFFFF00;
-        }
-
-        select > options{
-            text-align: center;
-        }
-
-        .containerDiv{
-            display: flex;
-            flex: 1;
-            flex-direction: row;
-            gap: 50px;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .inputDiv{
-            border-bottom: 1px solid rgba(189, 189, 189);
-            padding: 5px;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
-
-        .inputDiv1{
-            border-bottom: 1px solid rgba(211, 211, 211);
-            padding: 5px;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
-
-        .navDiv{
-            display: flex;
-            width: 100%;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 40px;
-            padding-top: 20px;
-            padding-left: 40px;
-            padding-right: 40px;
-        }
-
-        .secondSection, .navDiv{
-            margin-left: 20px;
-            margin-right: 20px;
-        }
-
-        .subHeadings{
-            color: #222222;
-            font-size: 24px;
-            font-weight: 600;
-            line-height: 29px;
-            letter-spacing: 0em;
-            margin-bottom: 10px;
-        }
-
-        .subHeadingParagraph{
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 19px;
-            letter-spacing: 0em;
-        }
-
-        .subSubHeading{
-            color: rgba(34,34, 34, 0.8);
-            font-size: 14px;
-            font-weight: 400;
-            line-height: 17px;
-            letter-spacing: 0em;
-            margin-bottom: 20px;
-        }
-
-        .labels{
-            color: rgba(34,34, 34, 0.8);
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 19px;
-            letter-spacing: 0em;
-        }
-
-        .orderReview{
-            background-color: #F6F6F6;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .summaryTotal{
-            color: #222222;
-            font-size: 16px;
-            font-weight: 600;
-            line-height: 19px;
-            letter-spacing: 0em;
-        }
-
-        .subtotal{
-            color: #222222;
-            font-size: 12px;
-            font-weight: 400;
-            line-height: 14px;
-            letter-spacing: 0em;
-        }
-
-        .price{
-            font-size: 14px;
-            font-weight: 400;
-            line-height: 17px;
-            letter-spacing: 0em;
-        }
-
-        #registrationDiv{
-            width: 70%;
-            margin-left: 80px;
-        }
-
-
-        #orderReviewDiv{
-            display: flex;
-            flex-direction: column;
-        }
-        
-        #countryLabel, #countryLabels{
-            display: inline-block;
-        }
-
-        .telPhoneInputDiv{
-            border-bottom: 1px solid rgba(189, 189, 189);
-            display: flex;
-            flex-direction: column; 
-            justify-content: flex-start;
-            padding: 5px;
-        }
-
-        .inputDivs{
-            margin-bottom: 20px;;
-        }
-
-        #form1, .orderReview{
-            width: 100%;
-            height: 100%;
-        }
-
-        #sub{
-            transition: all .5s ease-in-out;
-        }
-
-        #sub:hover {
-            transform: scale(1.07);
-        }
-        #sub{
-            transition: all .3s ease-in-out;
-        }
-
-        @media only screen and (max-device-width: 1000px){
-            .containerDiv{
-                flex-direction: column-reverse !important;
-            }
-
-            .secondSection, .navDiv{
-                margin-left: 0 !important;
-                margin-right: 0 !important;
-                padding-right: 0 !important;
-                padding-left: 0 !important;
-            }
-
-            #registrationDiv{
-                width: 80% !important;
-                margin-left: 30px !important;
-            }
-        }
-    </style>
 </head>
 <body>
     <section class="navDiv" style="border: none;">  
@@ -243,7 +39,7 @@
         </div>
     </section>
     <section class="secondSection" style="width: 100%; display: flex;">
-        <div class="containerDiv">
+        <div class="containerDiv" id="containerDiv">
             <form id="form1">
                 <div id="registrationDiv" class="registrationDiv" style="display: block;">
                     <h2 class="subHeadings">Registration</h2>
@@ -252,48 +48,48 @@
                     </br>
                     <h4 class="subSubHeading">CONTACT INFORMATION</h4>
                     <div class="inputDiv">
-                        <label for="" class="labels">FirstName</label>
-                        <input class="inputInfo" type="text" name="FirstName" id="firstName" required="" value="">
+                        <label for="firstName" class="labels">FirstName</label>
+                        <input class="inputInfo" type="text" name="FirstName" autocomplete="name" id="firstName" required="" value="">
                     </div>
                     <div class="inputDiv">
-                        <label for="" class="labels">LastName</label>
-                        <input class="inputInfo" type="text" name="LastName" id="lastName" required="" value="">
+                        <label for="lastName" class="labels">LastName</label>
+                        <input class="inputInfo" type="text" name="LastName" autocomplete="cc-family-name" id="lastName" required="" value="">
                     </div>
                     <div class="inputDiv">
-                        <label for="" class="labels">EmailAddress</label>
-                        <input class="inputInfo" type="email" name="EmailAddress" id="emailAddress" required="" value="">
+                        <label for="emailAddress" class="labels">EmailAddress</label>
+                        <input class="inputInfo" type="email" autocomplete="email" name="EmailAddress" id="emailAddress" required="" value="">
                     </div>
                     <div class="telPhoneInputDiv">
-                        <label for="" class="labels">PhoneNumber</label>
-                        <input class="inputInfo" id="phone" style="width: 100%;" type="tel" name="PhoneNumber" required="" value="" />
+                        <label for="phone" class="labels">PhoneNumber</label>
+                        <input class="inputInfo" id="phone" style="width: 100%;" type="tel" autocomplete="tel" name="PhoneNumber" required="" value="" />
                         <div class="alert alert-info" style="display: none;"></div>
                     </div>
                     </br>
                     </br>
                     <h4 class="subSubHeading">ADDRESS</h4>
                     <div class="inputDiv1">
-                        <label for="" class="labels">StreetAddress</label>
-                        <input class="inputInfo" type="address" name="Address" id="address" required="" value="">
+                        <label for="address" class="labels">StreetAddress</label>
+                        <input class="inputInfo" type="address" name="Address" id="address" autocomplete="address-line1" required="" value="">
                     </div>
                     <div class="inputDiv1">
-                        <label for="" class="labels">Apt/Suite (Optional)</label>
-                        <input class="inputInfo" type="text" name="Apt_Suite" value="">
+                        <label for="apt_suite" class="labels">Apt/Suite (Optional)</label>
+                        <input class="inputInfo" type="text" id="apt_suite" autocomplete="" name="Apt_Suite" value="">
                     </div>
                     <div class="inputDiv1">
-                        <label for="" class="labels">City</label>
-                        <input class="inputInfo" type="text" name="City" id="City" required="" value="">
+                        <label for="city" class="labels">City</label>
+                        <input class="inputInfo" type="text" name="City" autocomplete="" id="city" required="" value="">
                     </div>
                     <div class="inputDiv1">
-                        <label for="" class="labels">State</label>
-                        <input class="inputInfo" type="text" name="State" id="state" required="" value="">
+                        <label for="state" class="labels">State</label>
+                        <input class="inputInfo" type="text" name="State" autocomplete="" id="state" required="" value="">
                     </div>
                     <div class="inputDiv1">
-                        <label for="" class="labels">PostalCode</label>
-                        <input class="inputInfo" class="inputInfo" id="postalCode" name="PostalCode" type="text">
+                        <label for="postalCode" class="labels">PostalCode</label>
+                        <input class="inputInfo" class="inputInfo" id="postalCode" autocomplete="postal-code" name="PostalCode" type="text">
                     </div>
                     <div class="inputDiv1">
-                    <label id="countryLabel" for="" class="labels">Country</label>
-                    <select class="inputInfo" id="country" style="border: #FFFFFF00;" name="Country" class="form-control">
+                    <label id="countryLabel" for="country" class="labels">Country</label>
+                    <select class="inputInfo" id="country" style="border: #FFFFFF00;" autocomplete="country" name="Country" class="form-control">
                     <option value="" selected disabled hidden >Choose your country</option>
                     <option value="Afghanistan">Afghanistan</option>
                     <option value="Åland Islands">Åland Islands</option>
@@ -542,8 +338,8 @@
                     </select>
                     </div>
                     <div class="inputDiv1">
-                        <label for="" class="labels">Organization (Optional)</label>
-                        <input class="inputInfo" type="text" name="Organization" id="organization" value="">
+                        <label for="organization" class="labels">Organization (Optional)</label>
+                        <input class="inputInfo" type="text" name="Organization" id="organization" autocomplete="organization" value="">
                     </div>
                         <input style="width: 239px; height: 57px; border: none; background-color: #222222; color: white; margin-top: 20px;" class="buttonLink" id="sub" type="submit" value="Save and Continue">
                     
