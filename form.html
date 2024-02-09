@@ -13,7 +13,7 @@
         function receiveMessage(event){
             console.log(event.data);
             if(event.data === 'Hide'){
-                $('#containerDiv').hide();
+                $('#containerDiv').css({'flex-direction': 'column-reverse'});
             }
         }
         window.addEventListener('message', receiveMessage, false);
