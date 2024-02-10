@@ -64,7 +64,7 @@
     </section>
     <section class="secondSection" style="width: 100%; display: flex;">
         <div class="containerDiv" id="containerDiv">
-            <form id="form1">
+            <form class="form1" id="form1">
                 <div id="registrationDiv" class="registrationDiv" style="display: block;">
                     <h2 class="subHeadings">Registration</h2>
                     <p style>WHOIS privacy is included for all eligible domains, free of charge. <a style="text-decoration: none; color: #222222;" href="">Learn More</a></p>
@@ -97,15 +97,15 @@
                     </div>
                     <div class="inputDiv1">
                         <label for="apt_suite" class="labels">Apt/Suite (Optional)</label>
-                        <input class="inputInfo" type="text" id="apt_suite" autocomplete="" name="Apt_Suite" value="">
+                        <input class="inputInfo" type="text" id="apt_suite" name="Apt_Suite" value="">
                     </div>
                     <div class="inputDiv1">
                         <label for="city" class="labels">City</label>
-                        <input class="inputInfo" type="text" name="City" autocomplete="" id="city" required="" value="">
+                        <input class="inputInfo" type="text" name="City" id="city" required="" value="">
                     </div>
                     <div class="inputDiv1">
                         <label for="state" class="labels">State</label>
-                        <input class="inputInfo" type="text" name="State" autocomplete="" id="state" required="" value="">
+                        <input class="inputInfo" type="text" name="State" id="state" required="" value="">
                     </div>
                     <div class="inputDiv1">
                         <label for="postalCode" class="labels">PostalCode</label>
@@ -370,8 +370,8 @@
                     <!--<a class="buttonLink" href="" ><button id="buttonLink" style="width: 239px; height: 57px; background-color: #222222; color: white; margin-top: 20px;" type="">Save and Continue</button></a>-->
                 </div>
             </form>
-            <!--<form>
-                <div class="paymentDiv" id="paymentDiv" style="display: none;">
+           <form class="form1 hidden" id="form2">
+                <div class="paymentDiv" id="paymentDiv">
                     <h2 class="subHeadings">Payment Information</h2>
                     <p class="subHeadingParagraph">All your payment information is securely submitted</p>
                     </br>
@@ -408,7 +408,7 @@
                         <label for="">State</label>
                         <input class="inputInfo" type="text" name="State" id="state" required="" value="">
                     </div>
-                    <div class="inputDiv">
+                    <div class="inputDiv1">
                         <label id="countryLabels" for="">Country</label>
                         <select class="inputInfo" id="country1" style="border: #FFFFFF00;" name="country" class="form-control">
                         <option value="" selected disabled hidden >Choose your country</option>
@@ -669,10 +669,10 @@
                     </div>
                     <div class="inputDivs" >
                         <a class="buttonLink" href=""><button id="buttonLink1" style="width: 170px; height: 57px; background-color: #222222; color: white;" type="">Continue</button></a>
-                    </div>
-                    
+                    </div>  
                 </div>
-                <div class="reviewDiv" style="display: none;" id="reviewDiv">
+           </form>    
+                <!--<div class="reviewDiv" style="display: none;" id="reviewDiv">
                     <h2 class="subHeadings">Review Order</h2>
                     <p>All your payment information is securely submitted</p>
                     </br>
@@ -776,22 +776,28 @@
         
     </script>
     <script>
-        const registrationLink = document.querySelector("#registrationLink");
-        const paymentLink = document.querySelector("#paymentLink");
-        const reviewLink = document.querySelector("#reviewLink");
-        const firstNavigationArrow = document.querySelector("#firstNavigationArrow");
-        const secondNavigationArrow = document.querySelector("#secondNavigationArrow");
-        const registrationDiv = document.querySelector("#registrationDiv");
-        const paymentDiv = document.querySelector("#paymentDiv");
-        const reviewDiv = document.querySelector("#reviewDiv");
-        //const buttonLink = document.querySelector("#buttonLink");
+        //const form1 = document.querySelector("#form1");
+        //const form2 = document.querySelector("#form2");
+        //const registrationLink = document.querySelector("#registrationLink");
+        //const paymentLink = document.querySelector("#paymentLink");
+        //const reviewLink = document.querySelector("#reviewLink");
+        //const firstNavigationArrow = document.querySelector("#firstNavigationArrow");
+        //const secondNavigationArrow = document.querySelector("#secondNavigationArrow");
+        //const registrationDiv = document.querySelector("#registrationDiv");
+        //const paymentDiv = document.querySelector("#paymentDiv");
+        //const reviewDiv = document.querySelector("#reviewDiv");
+        //const sub = document.querySelector("#sub");
         //const buttonLink1 = document.querySelector("#buttonLink1");
 
-        //buttonLink.onclick = function(e){
+        //sub.onclick = function(event){
             //event.preventDefault();
             //firstNavigationArrow.disabled = false;
             //paymentLink.disabled = false;
-            //paymentDiv.style.display = 'block';
+            //form1.classList.add("hidden");
+            //form2.classList.remove("hidden");
+            //form2.classList.add("visible");
+            
+            
             //registrationDiv.style.display = 'none';
         //}
        // buttonLink1.onclick = function(e){
@@ -804,6 +810,17 @@
         //}
     </script>
     <script>
+        const form1 = document.querySelector("#form1");
+        const form2 = document.querySelector("#form2");
+        const registrationLink = document.querySelector("#registrationLink");
+        const paymentLink = document.querySelector("#paymentLink");
+        const reviewLink = document.querySelector("#reviewLink");
+        const firstNavigationArrow = document.querySelector("#firstNavigationArrow");
+        const secondNavigationArrow = document.querySelector("#secondNavigationArrow");
+        const registrationDiv = document.querySelector("#registrationDiv");
+        const paymentDiv = document.querySelector("#paymentDiv");
+        const reviewDiv = document.querySelector("#reviewDiv");
+        const sub = document.querySelector("#sub");
         let form = document.querySelector("form");
         form.addEventListener('submit', (e) => {
             e.preventDefault();
@@ -815,7 +832,12 @@
             })
             .then(res => res.text())
             .then(data => {
-                window.location.href = "https://arinadelondon.carrd.co/";
+                firstNavigationArrow.disabled = false;
+                paymentLink.disabled = false;
+                form1.classList.add("hidden");
+                form2.classList.remove("hidden");
+                form2.classList.add("visible");
+                //window.location.href = "";
                 form.reset();
             });
         })

@@ -42,7 +42,7 @@ button{
 
 .inputInfoCountry{
     border: none;
-    text-align: center;
+    text-align: left;
     outline: #FFFFFF00;
 }
 
@@ -159,7 +159,7 @@ select > options{
     letter-spacing: 0em;
 }
 
-#registrationDiv{
+#registrationDiv, #paymentDiv{
     width: 70%;
     margin-left: 80px;
 }
@@ -186,7 +186,7 @@ select > options{
     margin-bottom: 20px;;
 }
 
-#form1, .orderReview{
+.form1, .orderReview{
     width: 100%;
     height: 100%;
 }
@@ -212,6 +212,15 @@ select > options{
         margin-right: 0 !important;
         padding-right: 0 !important;
         padding-left: 0 !important;
+    }
+
+    .inputInfoCountry{
+        width: 40% !important;
+    }
+
+    #orderReviewDiv{
+        height: 70% !important;
+        width: 60% !important;
     }
 
     #registrationDiv{
