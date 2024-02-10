@@ -26,13 +26,12 @@
                         $('#registrationDiv').css({'width': '80%'});
                         $('#registrationDiv').css({'margin-left': '20px'});
                         $('#orderReviewDiv').css({'height': '70%'});
-                        $('#country').css({'width': '40px'});
+                        $('#country').css({'width': '45px'});
                     }else {
                         $('#containerDiv').css({'flex-direction': 'row'});
                     }
                 }
             var x = window.matchMedia("(max-width: 1000px)");
-            if(event.origin === 'https://arinadelondon.carrd.co/#payment') {return;}
             if(event.data === 'Hide'){
                 myFunction(x);
                 x.addEventListener("change", function() {
