@@ -40,6 +40,12 @@ button{
     outline: #FFFFFF00;
 }
 
+.inputInfoCountry{
+    border: none;
+    text-align: center;
+    outline: #FFFFFF00;
+}
+
 select > options{
     text-align: center;
 }

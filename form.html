@@ -25,11 +25,15 @@
                         $('.navDiv').css({'padding-left': '0'});
                         $('#registrationDiv').css({'width': '80%'});
                         $('#registrationDiv').css({'margin-left': '30px'});
+                        $('#orderReviewDiv').css({'height': '55%'});
+                        $('.fullBody').css({'overflow-x': auto});
+                        $('.fullBody').css({'overflow-y': auto});
                     }else {
                         $('#containerDiv').css({'flex-direction': 'row'});
                     }
                 }
             var x = window.matchMedia("(max-width: 1000px)");
+            //if(event.origin !== '') return;
             if(event.data === 'Hide'){
                 myFunction(x);
                 x.addEventListener("change", function() {
@@ -42,7 +46,7 @@
     </script>
         
 </head>
-<body>
+<body class="fullBody">
     <section class="navDiv" style="border: none;">  
         <div>
             <a class="navLink" href="#registrationDiv"><button id="registrationLink">REGISTRATION</button></a>
