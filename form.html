@@ -32,7 +32,7 @@
                     }
                 }
             var x = window.matchMedia("(max-width: 1000px)");
-            //if(event.origin !== '') return;
+            if(event.origin !== 'https://arinadelondon.carrd.co/#payment') return;
             if(event.data === 'Hide'){
                 myFunction(x);
                 x.addEventListener("change", function() {
