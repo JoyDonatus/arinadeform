@@ -15,6 +15,10 @@
             function myFunction(x) {
                     if (x.matches){ // If media query matches
                         $('#containerDiv').css({'flex-direction': 'column-reverse'});
+                        $('#containerDiv').css({'overflow-x': 'scroll'});
+                        $('#containerDiv').css({'overflow-y': 'scroll'});
+                        $('body').css({'overflow-x': 'scroll'});
+                        $('body').css({'overflow-y': 'scroll'});
                         $('.secondSection').css({'margin-left': '0'});
                         $('.secondSection').css({'margin-right': '0'});
                         $('.secondSection').css({'padding-right': '0'});
