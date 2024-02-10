@@ -15,11 +15,21 @@
             function myFunction(x) {
                     if (x.matches){ // If media query matches
                         $('#containerDiv').css({'flex-direction': 'column-reverse'});
-                    } else {
+                        $('.secondSection').css({'margin-left': '0'});
+                        $('.secondSection').css({'margin-right': '0'});
+                        $('.secondSection').css({'padding-right': '0'});
+                        $('.secondSection').css({'padding-left': '0'});
+                        $('.navDiv').css({'margin-left': '0'});
+                        $('.navDiv').css({'margin-right': '0'});
+                        $('.navDiv').css({'padding-right': '0'});
+                        $('.navDiv').css({'padding-left': '0'});
+                        $('#registrationDiv').css({'width': '80%'});
+                        $('#registrationDiv').css({'margin-left': '30px'});
+                    }else {
                         $('#containerDiv').css({'flex-direction': 'row'});
                     }
                 }
-            var x = window.matchMedia("(max-width: 700px)");
+            var x = window.matchMedia("(max-width: 1024px)");
             if(event.data === 'Hide'){
                 myFunction(x);
                 x.addEventListener("change", function() {
