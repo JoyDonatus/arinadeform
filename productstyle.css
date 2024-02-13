@@ -1,0 +1,409 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #F6F6F6;
+}
+
+.visible{
+    display: block;
+}
+
+.hidden{
+    display: none;
+}
+
+.comingSoon{
+    font-weight: 300;
+    font-family: SF Pro Display, sans-serif;
+    opacity: 0.7;
+    font-size: 29px;
+    line-height: 35px;
+    letter-spacing: 0em;
+}
+
+.comingSoonImage{
+    margin-bottom: 10px;
+    background-color: #FFFFFF00;
+}
+
+h2{
+    font-family: Simonetta;
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 44px;
+    letter-spacing: 0em;
+    height: 29px;
+    text-align: left;
+    color: #434343;
+}
+
+.firstContainer{
+    font-family: SF Pro Display, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 70px;
+    margin-top: 30px;
+    color: #222222;
+}
+
+#pageHeading{
+    font-size: 64px;
+    font-weight: 800;
+    line-height: 76px;
+    letter-spacing: 0em;
+    margin-bottom: 10px;
+}
+
+#pageDescription{
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0em;
+}
+
+.container5{
+    margin-bottom: 20px;
+}
+
+.guaSha{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.container{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #FFFFFF00;
+}
+
+.container1{
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+.container7{
+    font-family: SF Pro Display, sans-serif;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-bottom: 70px;
+}
+
+.container2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 380px;
+    height: 447px;
+    border-radius: 20px;
+    background-color: #FFFFFF00;
+}
+
+.container3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 380px;
+    height: 418px;
+    border-radius: 20px;
+    background-color: #FFFFFF00;
+}
+
+.imageDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 379px;
+    width: 380px;
+    background-color: #F8F4EB;
+    margin-bottom: 10px;
+    color: #222222;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+
+.guaSha1{
+    transition: all .5s ease-in-out;
+}
+.guaSha1:hover{
+    transform: scale(1.07);
+}
+.guaSha1{
+    transition: all .3s ease-in-out;
+}
+
+.popUpOrderButton{
+    transition: all .5s ease-in-out;
+}
+.popUpOrderButton:hover{
+    transform: scale(1.07);
+}
+.popUpOrderButton{
+    transition: all .3s ease-in-out;
+}
+
+.popUpImage{
+    transition: all .5s ease-in-out;
+}
+.popUpImage:hover{
+    transform: scale(1.07);
+}
+.popUpImage{
+    transition: all .3s ease-in-out;
+}
+
+.marginClass{
+    margin-right: 30px;
+}
+
+.priceTag1{
+    opacity: 0.7;
+}
+
+.priceTag, .priceTag1{
+    color: #222222;
+}
+
+.nameAndPriceDiv{
+    width: 100%;
+    height: 19.5px;
+    margin-bottom: 20px;
+}
+.itemName{
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.09px;
+    color: #222222;
+}
+
+.itemNames{
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.09px;
+    width: 138px;
+    height: 19px;
+    color: #222222;
+}
+
+.itemName1{
+    text-align: left;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.09px;
+    width: 148px;
+    height: 38px;
+    color: #222222;
+}
+
+.itemName2{
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.09px;
+    width: 100%;
+    height: 38px;
+    color: #222222;
+}
+
+.itemName3{
+    text-align: left;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.09px;
+    width: 155px;
+    height: 38px;
+    color: #222222;
+}
+
+.priceTag{
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 14.32px;
+    height: 14px;
+}
+
+input{
+    width: 132px;
+    height: 39px;
+    padding: 10px;
+    border-radius: 20px;
+    gap: 20px;
+    background-color: #222222;
+    color: #FFFFFF;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-left: -80px;
+}
+
+.popUp{
+    display: flex;
+    background: #FFF;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    font-family: SF Pro Display, sans-serif;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 80%;
+}
+
+.popUpContent{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 90%;
+    background: #FFF;
+}
+
+.closeButtonDiv{
+    display: block;
+    margin-left: auto;
+    padding-right: 20px;
+    margin-bottom: 50px;
+    background: #FFF;
+}
+
+.closeButton{
+    margin-right: 50px;
+    background: #FFF;
+}
+
+.popUpDescriptionDiv, .popUpImageDiv{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 20px;
+    background: #FFF;
+}
+
+.popUpImageDiv{
+    height: 30%;
+    justify-content: center;
+    align-items: center;
+}
+
+.popUpDescriptionParagraph{
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #222222;
+    margin-bottom: 20px;
+    background: #FFF;
+}
+
+.popUpDescriptionDiv{
+    align-items: center;
+    justify-content: center;
+    background: #FFF;
+}
+
+.popUpDescriptionDiv .productName{
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 10px;
+    background: #fff;
+}
+
+.popUpOrderButton{
+    border: none;
+    width: 170px;
+    height: 57px;
+    padding: 20px, 10px, 20px, 10px;
+    gap: 40px;
+    background-color: #222222;
+    color: #FFFFFF;
+}
+
+.popUpPriceTag{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #222222;
+    background: #fff;
+}
+
+.comingSoon1{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #222222;
+    opacity: 0.7;
+    background: #FFF;
+
+}
+
+@media only screen and (max-device-width: 750px){
+    h2{
+        text-align: center;
+    }
+
+    .container7{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container2{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+    .marginClass{
+        margin-right: 0;
+    }
+
+    .heading0{
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (min-device-width: 751px) and (max-device-width: 1280px){
+    .imageDiv0{
+        margin-right: 23px;
+    }
+}
+
+@media only screen and (min-device-width: 751px) and (max-device-width: 950px){
+    .imageDiv1{
+        margin-right: 23px;
+    }
+}
