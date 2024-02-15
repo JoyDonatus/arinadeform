@@ -51,10 +51,20 @@
             text-align: center;
         }
 
-        button{
+        .storeButton{
             background-color: #222222;
         }
-
+        .storeButton{
+            transition: all .5s ease-in-out;
+        }
+        .storeButton:hover{
+            transform: scale(1.07);
+            cursor: pointer;
+        }
+        .storeButton{
+            transition: all .3s ease-in-out;
+        }
+        
         </style>
 </head>
 <body>
@@ -69,7 +79,7 @@
                     <h4 style="font-size: 24px; font-weight: 400; line-height: 29px; letter-spacing: 0em;">Elevate your skincare routine with gua sha sets, jade rollers, and </br> other self-care essentials for the modern woman.</h4>
                 </div>
                 <div>
-                    <button style="width: 309px; height: 60px; color: white; border: none; padding: 30px, 10px, 30px, 10px; border-radius: 20px; gap: 40px; font-family: SF Pro Display; font-size: 18px;
+                    <button class="storeButton" style="width: 309px; height: 60px; color: white; border: none; padding: 30px, 10px, 30px, 10px; border-radius: 20px; gap: 40px; font-family: SF Pro Display; font-size: 18px;
                     font-weight: 700;
                     line-height: 21px;
                     letter-spacing: 0em;

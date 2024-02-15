@@ -30,8 +30,8 @@ button{
     letter-spacing: 0em;
 }
 
-.navLink :hover{
-    text-decoration: underline;
+.navLink{
+    text-decoration: none;
 }
 
 .inputInfo {
