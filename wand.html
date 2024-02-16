@@ -14,7 +14,7 @@
             console.log(event.data);
             function myFunction(x) {
                     if (x.matches){ // If media query matches
-                        $('#containerDiv').css({'flex-direction': 'column-reverse'});
+                        $('#containerDiv2').css({'flex-direction': 'column-reverse'});
                         $('.secondSection').css({'margin-left': '0'});
                         $('.secondSection').css({'margin-right': '0'});
                         $('.secondSection').css({'padding-right': '0'});
@@ -23,12 +23,12 @@
                         $('.navDiv').css({'margin-right': '0'});
                         $('.navDiv').css({'padding-right': '0'});
                         $('.navDiv').css({'padding-left': '0'});
-                        $('#registrationDiv').css({'width': '80%'});
-                        $('#registrationDiv').css({'margin-left': '20px'});
-                        $('#orderReviewDiv').css({'height': '70%'});
-                        $('#country').css({'width': '45px'});
+                        $('#registrationDiv2').css({'width': '80%'});
+                        $('#registrationDiv2').css({'margin-left': '20px'});
+                        $('#orderReviewDiv2').css({'height': '70%'});
+                        $('#country2').css({'width': '45px'});
                     }else {
-                        $('#containerDiv').css({'flex-direction': 'row'});
+                        $('#containerDiv2').css({'flex-direction': 'row'});
                     }
                 }
             var x = window.matchMedia("(max-width: 1000px)");
@@ -714,7 +714,7 @@
                 </div>-->
             <!--</form>-->
             <div id="orderReview" class="orderReview" style="width: 100%;">
-                <div id="orderReviewDiv" style=" background-color: white; width:50%; height: 40%;">
+                <div id="orderReviewDiv2" style=" background-color: white; width:50%; height: 40%;">
                     <div style="height: 40px; text-align: left; display: flex; align-items: flex-end; border-bottom: 1px solid rgba(239, 239, 239); padding: 5px;" >
                         <h4 class="summaryTotal">Order Summary</h4>
                     </div> 
