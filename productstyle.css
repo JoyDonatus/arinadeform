@@ -74,8 +74,8 @@ h2{
     border-radius: 10px;
 }
 
-.container{
-    width: 80%;
+.containerTwo{
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -141,17 +141,17 @@ h2{
     cursor: pointer;
 }
 
-.guaSha1, .popUpImage, .popUpOrderButton{
+.guaSha1, .popUpImage, .popUpOrderButton, .closeButton{
     transition: all .5s ease-in-out;
 }
-.guaSha1:hover, .popUpImage:hover, .closeButton:hover{
+.guaSha1:hover, .popUpImage:hover{
     transform: scale(1.07);
 }
-.popUpOrderButton:hover{
+.popUpOrderButton:hover, .closeButton:hover{
     transform: scale(1.07);
     cursor: pointer;
 }
-.guaSha1, .popUpOrderButton, .popUpImage{
+.guaSha1, .popUpOrderButton, .popUpImage, .closeButton{
     transition: all .3s ease-in-out;
 }
 
@@ -180,69 +180,12 @@ h2{
     color: #222222;
 }
 
-.itemNames{
-    text-align: center;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 19.09px;
-    width: 138px;
-    height: 19px;
-    color: #222222;
-}
-
-.itemName1{
-    text-align: left;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 19.09px;
-    width: 148px;
-    height: 38px;
-    color: #222222;
-}
-
-.itemName2{
-    text-align: center;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 19.09px;
-    width: 100%;
-    height: 38px;
-    color: #222222;
-}
-
-.itemName3{
-    text-align: left;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 19.09px;
-    width: 155px;
-    height: 38px;
-    color: #222222;
-}
-
 .priceTag{
     text-align: center;
     font-size: 12px;
     font-weight: 600;
     line-height: 14.32px;
     height: 14px;
-}
-
-input{
-    width: 132px;
-    height: 39px;
-    padding: 10px;
-    border-radius: 20px;
-    gap: 20px;
-    background-color: #222222;
-    color: #FFFFFF;
-    border: none;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 19px;
-    letter-spacing: 0em;
-    text-align: center;
-    margin-left: -80px;
 }
 
 .popUp{
@@ -406,22 +349,11 @@ input{
     .popUpContent{
         flex-direction: column;
     }
-
-    .popUp{
-        overflow: scroll !important;
-    }
     .productName{
         margin-bottom: 40px !important;
     }
     .popUpDescriptionDiv, .popUpImageDiv{
         margin-left: 0;
     }
-
-}
- @media only screen and (min-device-width: 751px) and (max-device-width: 1280px){ 
-
-}
-
-@media only screen and (min-device-width: 751px) and (max-device-width: 950px){
 
 }

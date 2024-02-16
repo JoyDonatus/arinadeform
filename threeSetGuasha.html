@@ -23,8 +23,8 @@
                         $('.navDiv').css({'margin-right': '0'});
                         $('.navDiv').css({'padding-right': '0'});
                         $('.navDiv').css({'padding-left': '0'});
-                        $('#registrationDiv').css({'width': '80%'});
-                        $('#registrationDiv').css({'margin-left': '20px'});
+                        $('#registrationDiv').css({'width': '90%'});
+                        $('#registrationDiv').css({'margin-left': '10px'});
                         $('#orderReviewDiv').css({'height': '70%'});
                         $('#country').css({'width': '45px'});
                     }else {
@@ -713,21 +713,21 @@
                     </div>
                 </div>-->
             <!--</form>-->
-            <div id="orderReview" class="orderReview" style="width: 100%;">
-                <div id="orderReviewDiv" style=" background-color: white; width:50%; height: 40%;">
-                    <div style="height: 40px; text-align: left; display: flex; align-items: flex-end; border-bottom: 1px solid rgba(239, 239, 239); padding: 5px;" >
+            <div id="orderReview" class="orderReview">
+                <div id="orderReviewDiv">
+                    <div id="orderSummaryDiv">
                         <h4 class="summaryTotal">Order Summary</h4>
                     </div> 
-                    <div class="inputDiv" style="height: 100px; margin-bottom: 20px; border-bottom: 1px solid rgba(239, 239, 239);">
+                    <div id="onetimePaymentDiv" class="inputDiv">
                         <div>
-                            <p style="font-weight: 500; font-size: 14px; line-height: 16.71px;">1 Terahertz Stone GuaSha 3 Set</p>
+                            <p id="onetimePaymentDivParagraph">1 Terahertz Stone GuaSha 3 Set</p>
                             <p class="subtotal">One time payment</p>
                         </div>
                         <div>
                             <p class="price">&#163;89.99</p>
                         </div>
                     </div>
-                    <div style="display: flex; flex-direction: row; align-items: flex-start; justify-content: space-between; border: none; height: 120px; padding: 5px;">
+                    <div id="subTotalDiv">
                         <div>
                             <p class="subtotal">Subtotal</p>
                         </div>
@@ -735,7 +735,7 @@
                             <p class="price">&#163;89.99</p>
                         </div>
                     </div>
-                    <div class="" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; border: none; height: 40px; padding: 5px;">
+                    <div id="summaryTotalDiv">
                         <div>
                             <h4 class="summaryTotal">Estimated Total</h4>
                         </div>
@@ -809,22 +809,22 @@
         //}
     </script>
     <script>
-        const form1 = document.querySelector("#form1");
-        const form2 = document.querySelector("#form2");
-        const registrationLink = document.querySelector("#registrationLink");
+        //const form1 = document.querySelector("#form1");
+        //const form2 = document.querySelector("#form2");
+        //const registrationLink = document.querySelector("#registrationLink");
         // const paymentLink = document.querySelector("#paymentLink");
         // const reviewLink = document.querySelector("#reviewLink");
         // const firstNavigationArrow = document.querySelector("#firstNavigationArrow");
         // const secondNavigationArrow = document.querySelector("#secondNavigationArrow");
-        const registrationDiv = document.querySelector("#registrationDiv");
+        //const registrationDiv = document.querySelector("#registrationDiv");
         // const paymentDiv = document.querySelector("#paymentDiv");
         // const reviewDiv = document.querySelector("#reviewDiv");
-        const sub = document.querySelector("#sub");
-        let form = document.querySelector("form");
-        form.addEventListener('submit', (e) => {
+        //const sub = document.querySelector("#sub");
+        let form1 = document.querySelector("#form1");
+        form1.addEventListener('submit', (e) => {
             e.preventDefault();
             //document.querySelector("#sub").value = "Submitting ..";
-            let data = new FormData(form);
+            let data = new FormData(form1);
             fetch('https://script.google.com/macros/s/AKfycbzWRK_exBpH9QapzhlYqumeEwxystU2cvV9BRMeWAqeydC5ZtWr-uvVnHZiSqjoZZ3KFg/exec',{
                 method: "POST",
                 body: data
@@ -837,7 +837,7 @@
                 // form2.classList.remove("hidden");
                 // form2.classList.add("visible");
                 window.location.href = "https://buy.stripe.com/6oE02z22EelzdQQaEE";
-                form.reset();
+                form1.reset();
             });
         })
     </script>

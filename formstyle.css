@@ -164,14 +164,51 @@ select > options{
     margin-left: 80px;
 }
 
-
 #orderReviewDiv{
     display: flex;
     flex-direction: column;
+    background-color: white; 
+    width:50%; 
+    height: 40%;
 }
-
+#orderSummaryDiv{
+    height: 40px; 
+    text-align: left; 
+    display: flex; 
+    align-items: flex-end; 
+    border-bottom: 1px solid rgba(239, 239, 239); 
+    padding: 5px;
+}
+#onetimePaymentDiv{
+    height: 100px; 
+    margin-bottom: 20px; 
+    border-bottom: 1px solid rgba(239, 239, 239);
+}
+#onetimePaymentDivParagraph{
+    font-weight: 500; 
+    font-size: 14px; 
+    line-height: 16.71px;
+}
+#subTotalDiv{
+    display: flex; 
+    flex-direction: row; 
+    align-items: flex-start; 
+    justify-content: space-between; 
+    border: none; 
+    height: 120px; 
+    padding: 5px;
+}
 #countryLabel, #countryLabels{
     display: inline-block;
+}
+#summaryTotalDiv{
+    display: flex; 
+    flex-direction: row; 
+    align-items: center; 
+    justify-content: space-between; 
+    border: none; 
+    height: 40px; 
+    padding: 5px;
 }
 
 .telPhoneInputDiv{
