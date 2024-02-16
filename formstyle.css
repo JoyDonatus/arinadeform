@@ -23,7 +23,7 @@ button{
     font-weight: 700;
 }
 
-#registrationLink, #paymentLink, #reviewLink{
+#registrationLink{
     font-size: 16px;
     font-weight: 600;
     line-height: 19px;
@@ -159,7 +159,7 @@ select > options{
     letter-spacing: 0em;
 }
 
-#registrationDiv, #paymentDiv{
+#registrationDiv, #registrationDiv1{
     width: 70%;
     margin-left: 80px;
 }
@@ -260,7 +260,7 @@ select > options{
         width: 60% !important;
     }
 
-    #registrationDiv{
+    #registrationDiv, #registrationDiv1{
         width: 80% !important;
         margin-left: 30px !important;
     }
