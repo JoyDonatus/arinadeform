@@ -223,7 +223,7 @@ select > options{
     margin-bottom: 20px;;
 }
 
-.form1, .orderReview{
+.form1, .form3, .form2, .orderReview{
     width: 100%;
     height: 100%;
 }
