@@ -64,7 +64,29 @@
         .storeButton{
             transition: all .3s ease-in-out;
         }
-        
+
+        @media only screen and (max-device-width: 1000px){
+            .landingPageContainer{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100vh;
+            background-color: #FFFFFF;
+            }
+            .landingPageDiv{
+            width: 100%;
+            height: 50%;
+            }
+            #contentDiv{
+                width: 100%;
+                padding: 0;
+                height: 50%;
+            }
+            #contentHeading{
+                font-size: 50px;
+                font-weight: 500;
+            }
+        }
         </style>
 </head>
 <body>
@@ -75,7 +97,7 @@
             <div class="content">
                 <div style="margin-bottom: 20px;">
                     <h4 style="margin-bottom: 10px; font-size: 24px; font-weight: 400; line-height: 20px; letter-spacing: 0em;">Wellness / Facial / Life</h4>
-                    <h1 style="margin-bottom: 10px; font-size: 64px; font-weight: 800; line-height: 70px; letter-spacing: 0em;">Embrace Your </br> Natural Beauty</h1>
+                    <h1 id="contentHeading" style="margin-bottom: 10px; font-size: 64px; font-weight: 800; line-height: 70px; letter-spacing: 0em;">Embrace Your </br> Natural Beauty</h1>
                     <h4 style="font-size: 24px; font-weight: 400; line-height: 29px; letter-spacing: 0em;">Elevate your skincare routine with gua sha sets, jade rollers, and </br> other self-care essentials for the modern woman.</h4>
                 </div>
                 <div>

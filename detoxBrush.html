@@ -12,6 +12,22 @@
     <script>
         function receiveMessage(event){
             console.log(event.data);
+            function ourFunction(){
+                let form3 = $("#form3");
+                form3.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    let data = new FormData(form3);
+                    fetch('https://script.google.com/macros/s/AKfycbyx7cWS8Sv_PU_Zj3uoywVs7H1oJ3X5-8FqYRx8NDcqjSWAtHP0FwKvqcJkZ5EDoTV_/exec',{
+                        method: "POST",
+                        body: data
+            })
+            .then(res => res.text())
+            .then(data => {
+                window.location.href = "https://buy.stripe.com/28obLh0YAa5j9AA289";
+                form3.reset();
+            });
+        })
+            }
             function myFunction(x) {
                     if (x.matches){ // If media query matches
                         $('#containerDiv1').css({'flex-direction': 'column-reverse'});
@@ -36,6 +52,7 @@
                 myFunction(x);
                 x.addEventListener("change", function() {
                 myFunction(x);
+                ourFunction();
                 });
             }
         }
