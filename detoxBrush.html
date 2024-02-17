@@ -12,22 +12,6 @@
     <script>
         function receiveMessage(event){
             console.log(event.data);
-            function ourFunction(){
-                let form3 = $("#form3");
-                form3.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    let data = new FormData(form3);
-                    fetch('https://script.google.com/macros/s/AKfycbyx7cWS8Sv_PU_Zj3uoywVs7H1oJ3X5-8FqYRx8NDcqjSWAtHP0FwKvqcJkZ5EDoTV_/exec',{
-                        method: "POST",
-                        body: data
-            })
-            .then(res => res.text())
-            .then(data => {
-                window.location.href = "https://buy.stripe.com/28obLh0YAa5j9AA289";
-                form3.reset();
-            });
-        })
-            }
             function myFunction(x) {
                     if (x.matches){ // If media query matches
                         $('#containerDiv1').css({'flex-direction': 'column-reverse'});
@@ -49,10 +33,23 @@
                 }
             var x = window.matchMedia("(max-width: 1000px)");
             if(event.data === 'Hide'){
+                $("#form3").addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    let data = new FormData(form3);
+                    fetch('https://script.google.com/macros/s/AKfycbyx7cWS8Sv_PU_Zj3uoywVs7H1oJ3X5-8FqYRx8NDcqjSWAtHP0FwKvqcJkZ5EDoTV_/exec',{
+                        method: "POST",
+                        body: data
+            })
+            .then(res => res.text())
+            .then(data => {
+                window.location.href = "https://buy.stripe.com/28obLh0YAa5j9AA289";
+                form3.reset();
+            });
+        });
                 myFunction(x);
                 x.addEventListener("change", function() {
                 myFunction(x);
-                ourFunction();
+                
                 });
             }
         }
@@ -837,17 +834,17 @@
         // const paymentDiv = document.querySelector("#paymentDiv");
         // const reviewDiv = document.querySelector("#reviewDiv");
         //const sub = document.querySelector("#sub");
-        let form3 = document.querySelector("#form3");
-        form3.addEventListener('submit', (e) => {
-            e.preventDefault();
+        //let form3 = document.querySelector("#form3");
+        //form3.addEventListener('submit', (e) => {
+            //e.preventDefault();
             //document.querySelector("#sub").value = "Submitting ..";
-            let data = new FormData(form3);
-            fetch('https://script.google.com/macros/s/AKfycbyx7cWS8Sv_PU_Zj3uoywVs7H1oJ3X5-8FqYRx8NDcqjSWAtHP0FwKvqcJkZ5EDoTV_/exec',{
-                method: "POST",
-                body: data
-            })
-            .then(res => res.text())
-            .then(data => {
+            //let data = new FormData(form3);
+            //fetch('https://script.google.com/macros/s/AKfycbyx7cWS8Sv_PU_Zj3uoywVs7H1oJ3X5-8FqYRx8NDcqjSWAtHP0FwKvqcJkZ5EDoTV_/exec',{
+               // method: "POST",
+                //body: data
+            //})
+            //.then(res => res.text())
+            //.then(data => {
                 // firstNavigationArrow.disabled = false;
                 // paymentLink.disabled = false;
                 // form1.classList.add("hidden");
