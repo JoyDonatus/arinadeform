@@ -10,24 +10,32 @@
             margin: 0;
             padding: 0;
         }
-
-        .landingPageContainer{
+        .landingPageContainer, .landingPageContainerOne{
+            position: relative;
             display: flex;
             flex-direction: row;
             width: 100%;
             height: 100vh;
             background-color: #FFFFFF;
-            
-        }
+            }
 
         .landingPageDiv{
             background-image: url("https://lh3.googleusercontent.com/pw/ABLVV86SPjeu3vVawpU0kwPIBsO_EANbefM1lFzbjC9REiJzVdqQeQT58IqklSddkLqJddpiDxpul1x01JVTBDhMbHZ2ZIEc0_fzflh5x4pUUHN1ZxppUHhMjb46Y7MjAvwy0mBOzPhfjaBs5-_gtRi-50Ya=w494-h619-s-no-gm?authuser=0");
             background-repeat: no-repeat;
-            width:40%;
+            width:45%;
             background-size: 100% 100%;
             height: 100%;
             background-position: left bottom;
-        }
+            }
+
+        #contentDiv, #contentDivOne{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #222222;
+            height: 100%;
+            }
         
         #contentDiv{
             display: flex;
@@ -64,27 +72,60 @@
         .storeButton{
             transition: all .3s ease-in-out;
         }
-
-        @media only screen and (max-device-width: 1000px){
-            .landingPageContainer{
+        .landingPageDivOne{
+            position: relative;
             display: flex;
-            flex-direction: column;
-            width: 100%;
-            height: 100vh;
-            background-color: #FFFFFF;
+            align-items: center;
+            justify-content: center;
             }
-            .landingPageDiv{
+        .landingPageDivOne::before {
+            content: " ";
+            background-image: url("https://lh3.googleusercontent.com/pw/ABLVV86SPjeu3vVawpU0kwPIBsO_EANbefM1lFzbjC9REiJzVdqQeQT58IqklSddkLqJddpiDxpul1x01JVTBDhMbHZ2ZIEc0_fzflh5x4pUUHN1ZxppUHhMjb46Y7MjAvwy0mBOzPhfjaBs5-_gtRi-50Ya=w494-h619-s-no-gm?authuser=0");
+            background-size: contain;
+            background-position: center center;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+            opacity: 0.2;
+            }
+        #contentDivOne{
+            position: relative;
             width: 100%;
+            padding: 0;
             height: 50%;
             }
-            #contentDiv{
-                width: 100%;
-                padding: 0;
-                height: 50%;
+
+        @media only screen and (max-device-width: 1000px){
+        .landingPageContainerOne{
+            flex-direction: column;
+            overflow: auto;
+            background-color: #FFFFFF00;
             }
-            #contentHeading{
-                font-size: 50px;
-                font-weight: 500;
+        .landingPageDiv, #contentDiv{
+            display: none;
+            }
+        .landingPageDivOne, #contentDivOne, .landingPageContainer{
+            display: block;
+        }
+        #firstDesc{
+            font-size: 22px !important;
+            font-weight: 400 !important;
+            margin-top: 10px !important;
+            }
+        #firstHeading{
+            font-size: 55px !important;
+            font-weight: 800 !important;
+            line-height: 60px !important;
+            }
+        #lastDesc{
+            font-size: 22px !important;
+            width: 350px !important;
+            }
+        #main{
+            width: 100vw !important;
             }
         }
         </style>
@@ -96,12 +137,12 @@
         <div id="contentDiv">
             <div class="content">
                 <div style="margin-bottom: 20px;">
-                    <h4 style="margin-bottom: 10px; font-size: 24px; font-weight: 400; line-height: 20px; letter-spacing: 0em;">Wellness / Facial / Life</h4>
-                    <h1 id="contentHeading" style="margin-bottom: 10px; font-size: 64px; font-weight: 800; line-height: 70px; letter-spacing: 0em;">Embrace Your </br> Natural Beauty</h1>
-                    <h4 style="font-size: 24px; font-weight: 400; line-height: 29px; letter-spacing: 0em;">Elevate your skincare routine with gua sha sets, jade rollers, and </br> other self-care essentials for the modern woman.</h4>
+                    <h4 style="margin-bottom: 10px; font-size: 24px; font-weight: 400; line-height: 20px; letter-spacing: 0em;">Wellness | Full Health | Wholeness</h4>
+                    <h1 style="margin-bottom: 10px; font-size: 64px; font-weight: 800; line-height: 70px; width: 600px; letter-spacing: 0em;">Unleash Your </br> Power Within.</h1>
+                    <h4 style="font-size: 24px; font-weight: 400; line-height: 29px; width: 600px; letter-spacing: 0em;">Support Your Natural Healing with Our Expertly Curated Lymphatic & Reproductive Protocols And Other Self Care Tools for the Quintessential Woman.</h4></h4>
                 </div>
                 <div>
-                    <button class="storeButton" style="width: 309px; height: 60px; color: white; border: none; padding: 30px, 10px, 30px, 10px; border-radius: 20px; gap: 40px; font-family: SF Pro Display; font-size: 18px;
+                    <button id="storeButton" class="icons2" style="width: 309px; height: 60px; color: white; border: none; background-color: #222222; padding: 30px, 10px, 30px, 10px; border-radius: 20px; gap: 40px; font-family: SF Pro Display; font-size: 18px;
                     font-weight: 700;
                     line-height: 21px;
                     letter-spacing: 0em;
@@ -114,10 +155,36 @@
                         <a href="http://www.twitter.com/arinadelondon" style="margin-right: 5px;"><img src="https://lh3.googleusercontent.com/pw/ABLVV85kweEJiMSugfcSJJ3F66oUsgoKxIWdk52NNLmP6jGfXWSnz25KamZ8FoW35Uvgew0ldZJRcTwbB-R6B866-6IpcA6Dw0IAxJn57bXYApFhrZmbTRJP6gQHtK3vST_h9bH00XjyE1HKhMOHqCLT286w=w31-h31-s-no-gm?authuser=0" alt="twitter link" class = "icons1"></a>
                         <a href="http://www.facebook.com/arinadelondon"><img src="https://lh3.googleusercontent.com/pw/ABLVV86QH6F9K5D4h20wnYu_kRqXkLrVeZDGN1bV8-N6QmMGb7oNq4YPQqV4NC0dhaqYkdy3_UB-dV7bRbeuNPlWgqFZ_tm19Ti77PuurnDCYoHlSCqYyugb255I6qGJdUZeGZYsFqAZi7QdBNhStiMSHjz9=w30-h30-s-no-gm?authuser=0" alt="facebook link" class="icons1"></a>
                     </div>
+                </div>  
+            </div>      
+        </div>
+    </div>
+    <div class="landingPageContainerOne" style="display: none;">
+        <div class="landingPageDivOne">
+        </div>
+        <div id="contentDivOne">
+            <div class="content">
+                <div style="margin-bottom: 20px;">
+                    <h4 id="firstDesc" style="margin-bottom: 10px; font-size: 24px; font-weight: 400; line-height: 20px; letter-spacing: 0em;">Wellness / Facial / Life</h4>
+                    <h1 id="firstHeading" style="margin-bottom: 10px; font-size: 64px; font-weight: 800; line-height: 70px; letter-spacing: 0em;">Embrace Your </br> Natural Beauty</h1>
+                    <h4 id="lastDesc" style="font-size: 24px; font-weight: 400; line-height: 29px; letter-spacing: 0em;">Elevate your skincare routine with gua sha sets, jade rollers, and </br> other self-care essentials for the modern woman.</h4>
                 </div>
-                
-            </div>
-            
+                <div>
+                    <button id="storeButtonOne" class="icons2" style="width: 309px; height: 60px; color: white; border: none; padding: 30px, 10px, 30px, 10px; border-radius: 20px; gap: 40px; font-family: SF Pro Display; font-size: 18px;
+                    font-weight: 700;
+                    line-height: 21px;
+                    letter-spacing: 0em;
+                    text-align: center;
+                    ">Discover Products
+                    </button>
+                    <div id="iconsDivOne" style="display: flex; align-items: center; justify-content: center; width: 100%; margin-bottom: 25px; margin-top: 10px;">
+                        <a href="https://arinadelondon.carrd.co/" style="margin-right: 5px;"><img src="https://lh3.googleusercontent.com/pw/ABLVV84HsYT7iW1XMIfnTySxU2Z8wY6odLJ8jk0SA4A4kIGVFPNyup5-XXMw08zJWp8eVeV44UtHmtU-mjXp1PF_KwIa-DYaCVZZt6pxxdX0DJeRZlN3gEetZr88Eauxkmtwzad0Q-s7Op0c6GPJSaoBmPMO=w105-h105-s-no-gm?authuser=0" alt="site logo" width="30" height="30" class="icons1"></a>
+                        <a href="http://www.instagram.com/arinadelondon" style="margin-right: 5px;"><img src="https://lh3.googleusercontent.com/pw/ABLVV86vAH9ZPt77AH2BxiEXCm-wjvOMoiOSFQPZ_4jYj6Gd1XpqpQJ5SuA_sN1AG7wERk39y_uCw7N_cDCE0v92tDmJJIyt2IV0lvUsje-zFmy5kAwW8gSh-LqYSqxhbZi2x4wdHwFReEmQ5FFiVzL-trth=w31-h31-s-no-gm?authuser=0" alt="instagram link" class = "icons1"></a>
+                        <a href="http://www.twitter.com/arinadelondon" style="margin-right: 5px;"><img src="https://lh3.googleusercontent.com/pw/ABLVV85kweEJiMSugfcSJJ3F66oUsgoKxIWdk52NNLmP6jGfXWSnz25KamZ8FoW35Uvgew0ldZJRcTwbB-R6B866-6IpcA6Dw0IAxJn57bXYApFhrZmbTRJP6gQHtK3vST_h9bH00XjyE1HKhMOHqCLT286w=w31-h31-s-no-gm?authuser=0" alt="twitter link" class = "icons1"></a>
+                        <a href="http://www.facebook.com/arinadelondon"><img src="https://lh3.googleusercontent.com/pw/ABLVV86QH6F9K5D4h20wnYu_kRqXkLrVeZDGN1bV8-N6QmMGb7oNq4YPQqV4NC0dhaqYkdy3_UB-dV7bRbeuNPlWgqFZ_tm19Ti77PuurnDCYoHlSCqYyugb255I6qGJdUZeGZYsFqAZi7QdBNhStiMSHjz9=w30-h30-s-no-gm?authuser=0" alt="facebook link" class="icons1"></a>
+                    </div>
+                </div>  
+            </div>      
         </div>
     </div>
 </body>

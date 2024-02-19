@@ -234,6 +234,7 @@ select > options{
 
 #sub:hover {
     transform: scale(1.07);
+    cursor: pointer;
 }
 #sub{
     transition: all .3s ease-in-out;
