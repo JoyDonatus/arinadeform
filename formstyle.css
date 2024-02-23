@@ -114,7 +114,7 @@ select > options{
 
 .subSubHeading{
     color: rgba(34,34, 34, 0.8);
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
     line-height: 17px;
     letter-spacing: 0em;
@@ -123,7 +123,7 @@ select > options{
 
 .labels{
     color: rgba(34,34, 34, 0.8);
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 400;
     line-height: 19px;
     letter-spacing: 0em;
