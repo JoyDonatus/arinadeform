@@ -113,7 +113,7 @@ select > options{
 }
 
 .subSubHeading{
-    color: rgba(34, 34, 34, 0.9);
+    color: rgba(34, 34, 34, 0.8);
     font-size: 16px;
     font-weight: 400;
     line-height: 17px;
@@ -121,25 +121,25 @@ select > options{
     margin-bottom: 20px;
 }
 
-inputDiv label{
-    color: rgba(34, 34, 34, 0.5);
-    font-size: 5px;
+.inputDiv label{
+    color: rgba(34, 34, 34, 0.7);
+    font-size: 12px;
     font-weight: 300;
     line-height: 19px;
     letter-spacing: 0em;
 }
 
-inputDiv1 label{
-    color: rgba (34, 34, 34, 0.5);
-    font-size: 5px;
+.inputDiv1 label{
+    color: rgba (34, 34, 34, 0.7);
+    font-size: 12px;
     font-weight: 300;
     line-height: 19px;
     letter-spacing: 0em;
 }
 
-telPhoneInputDiv label{
-    color: rgba (34, 34, 34, 0.5);
-    font-size: 5px;
+.telPhoneInputDiv label{
+    color: rgba (34, 34, 34, 0.7);
+    font-size: 12px;
     font-weight: 300;
     line-height: 19px;
     letter-spacing: 0em;
