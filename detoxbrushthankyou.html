@@ -11,24 +11,21 @@
             console.log(event.data);
             function myFunction(x) {
                     if (x.matches){ // If media query matches
-                        $('#containerDiv1').css({'flex-direction': 'column-reverse'});
-                        $('.secondSection').css({'margin-left': '0'});
-                        $('.secondSection').css({'margin-right': '0'});
-                        $('.secondSection').css({'padding-right': '0'});
-                        $('.secondSection').css({'padding-left': '0'});
-                        $('.navDiv').css({'margin-left': '0'});
-                        $('.navDiv').css({'margin-right': '0'});
-                        $('.navDiv').css({'padding-right': '0'});
-                        $('.navDiv').css({'padding-left': '0'});
-                        $('#registrationDiv1').css({'width': '80%'});
-                        $('#registrationDiv1').css({'margin-left': '20px'});
-                        $('#orderReviewDiv1').css({'height': '70%'});
-                        $('#country1').css({'width': '45px'});
+                        $('.orderConfirmationHeader').css({'margin-left': '10px'});
+                        $('.orderConfirmationHeader').css({'margin-bottom': '50px'});
+                        $('.orderConfirmationParagraph').css({'margin-left': '10px'});
+                        $('.orderConfirmationDiv').css({'width': '100%'});
+                        $('.thankYouDiv').css({'width': '100%'});
+                        $('.thankYouContainer').css({'padding-left': '20px'});
+                        $('.orderConfirmationParagraph').css({'text-align': 'center'});
+                        $('.thankYouDiv').css({'text-align': 'center'});
+                        $('.orderNumber').css({'text-align': 'center'});
+                        $('.orderConfirmationHeader').css({'text-align': 'center'});
                     }else {
-                        $('#containerDiv1').css({'flex-direction': 'row'});
+                        
                     }
                 }
-            var x = window.matchMedia("(max-width: 1000px)");
+            var x = window.matchMedia("(max-width: 750px)");
             if(event.data === 'Hide'){
                 myFunction(x);
                 x.addEventListener("change", function() {
