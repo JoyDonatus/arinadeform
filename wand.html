@@ -72,7 +72,7 @@
                     <h4 class="subSubHeading">CONTACT INFORMATION</h4>
                     <div class="inputDiv">
                         <label for="firstName" class="labels">FirstName</label>
-                        <input class="inputInfo" type="text" name="FirstName" autocomplete="name" id="firstName" required="" value="">
+                        <input class="inputInfo" type="text" name="FirstName" autocomplete="name" id="firstName2" required="" value="">
                     </div>
                     <div class="inputDiv">
                         <label for="lastName" class="labels">LastName</label>
@@ -364,6 +364,9 @@
                         <label for="organization" class="labels">Organization (Optional)</label>
                         <input class="inputInfo" type="text" name="Organization" id="organization" autocomplete="organization" value="">
                     </div> -->
+                    <div style="display: none">
+                         <input type="text" name="orderNumber" value="" id="orderNumber2">
+                    </div>
                         <input style="width: 239px; height: 57px; border: none; background-color: #222222; color: white; margin-top: 20px;" class="buttonLink" id="sub" type="submit" value="Save and Continue">
                     
                     <!--<a class="buttonLink" href="" ><button id="buttonLink" style="width: 239px; height: 57px; background-color: #222222; color: white; margin-top: 20px;" type="">Save and Continue</button></a>-->
@@ -823,7 +826,21 @@
         let form2 = document.querySelector("#form2");
         form2.addEventListener('submit', (e) => {
             e.preventDefault();
+
+            let orderNumber2 = document.getElementById("orderNumber2");
+            let firstName2 = document.getElementById("firstName2");
+
+            let el2 = Math.floor(Math.random()*1000000);
+            orderNumber2.value = el2;
+            
+            const firstNameWandValue = firstName2.value;
+            const orderNumberWandValue = '#AL-' + orderNumber2.value;
+
+            localStorage.setItem('first-namewand', firstNameWandValue);
+            localStorage.setItem('order-numberwand', orderNumberWandValue);
+            
             //document.querySelector("#sub").value = "Submitting ..";
+            
             let data = new FormData(form2);
             fetch('https://script.google.com/macros/s/AKfycbwnRvVaeMPoqGtwBsPS1JlAzXHErPaofrVkMAq-UucWe9BDMI4CNBFZSQY_3tIxRNa44A/exec',{
                 method: "POST",
