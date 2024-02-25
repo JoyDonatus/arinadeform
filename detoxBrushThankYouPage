@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>thank you</title>
+    <link rel="stylesheet" href="./thankyoustyle.css">
+</head>
+<body>
+    <div class="thankYouContainer" id="thankYouContainer">
+        <nav class="thankYouNavDiv" id="thankYouNavDiv">
+            <a class="logoLink" id="logoLink" href="https://arinadelondon.carrd.co/"><img src="https://lh3.googleusercontent.com/pw/ABLVV84HsYT7iW1XMIfnTySxU2Z8wY6odLJ8jk0SA4A4kIGVFPNyup5-XXMw08zJWp8eVeV44UtHmtU-mjXp1PF_KwIa-DYaCVZZt6pxxdX0DJeRZlN3gEetZr88Eauxkmtwzad0Q-s7Op0c6GPJSaoBmPMO=w105-h105-s-no-gm?authuser=0" alt="site logo" width="120" height="120" id="logoImg" class="logoImg"></a>
+        </nav>
+        <div class="thankYouContentMainDiv" id="thankYouContentMainDiv">
+            <div class="blueTickDiv" id="blueTickDiv">
+                <img src="#blueTick" alt="">
+            </div>
+            <div class="thankYouContentDiv" id="thankYouContentDiv">
+                <div class="thankYouDiv" id="thankYouDiv">
+                    <p class="orderNumber" id="orderNumber"></p>
+                    <p class="thankYouParagraph" id="thankYouParagraph"></p>
+                </div>
+                <div class="orderConfirmationDiv" id="orderConfirmationDiv">
+                    <h2 class="orderConfirmationHeader" id="orderConfirmationHeader">Your Order is confirmed</h2>
+                    <p class="orderConfirmationParagraph" id="orderConfirmationParagraph">We've accepted your order, and we're getting it ready. Come back to this page for updates on your shipment status.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const first_name = localStorage.getItem('first-name');
+        const order_number = localStorage.getItem('order-number')
+
+        document.getElementById('thankYouParagraph').textContent = 'Thank you,' + " " + first_name + '!';
+        document.getElementById('orderNumber').textContent = 'Order #AL-' + order_number;
+    </script>
+</body>
+</html>
