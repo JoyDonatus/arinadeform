@@ -72,7 +72,7 @@
                     <h4 class="subSubHeading">CONTACT INFORMATION</h4>
                     <div class="inputDiv">
                         <label for="firstName" class="labels">FirstName</label>
-                        <input class="inputInfo" type="text" name="FirstName" autocomplete="name" id="firstName1" required="" value="">
+                        <input class="inputInfo" type="text" name="FirstName" autocomplete="name" id="firstName3" required="" value="">
                     </div>
                     <div class="inputDiv">
                         <label for="lastName" class="labels">LastName</label>
@@ -365,7 +365,7 @@
                         <input class="inputInfo" type="text" name="Organization" id="organization" autocomplete="organization" value="">
                     </div> -->
                         <div style="display: none">
-                            <input type="text" name="orderNumber" value="" id="orderNumber1">
+                            <input type="text" name="orderNumber" value="" id="orderNumber3">
                         </div>
                         <input style="width: 239px; height: 57px; border: none; background-color: #222222; color: white; margin-top: 20px;" class="buttonLink" id="sub" type="submit" value="Save and Continue">
                     
@@ -827,13 +827,13 @@
         form3.addEventListener('submit', (e) => {
             e.preventDefault();
             //document.querySelector("#sub").value = "Submitting ..";
-            let orderNumber1 = document.getElementById("orderNumber1");
-            let firstName1 = document.getElementById("firstName1");
+            let orderNumber3 = document.getElementById("orderNumber3");
+            let firstName3 = document.getElementById("firstName3");
 
-            let el1 = Math.floor(Math.random()*1000000);
+            let el3 = Math.floor(Math.random()*1000000);
 
-            const firstNameBrushValue = firstName1.value;
-            const orderNumberBrushValue = '#AL-' + orderNumber1.value;
+            const firstNameBrushValue = firstName3.value;
+            const orderNumberBrushValue = '#AL-' + orderNumber3.value;
 
             localStorage.setItem('first-namebrush', firstNameBrushValue);
             localStorage.setItem('order-numberbrush', orderNumberBrushValue);
