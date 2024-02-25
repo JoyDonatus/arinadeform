@@ -5,6 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>thank you</title>
     <link rel="stylesheet" href="./thankyoustyle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        function receiveMessage(event){
+            console.log(event.data);
+            function myFunction(x) {
+                    if (x.matches){ // If media query matches
+                        $('#containerDiv1').css({'flex-direction': 'column-reverse'});
+                        $('.secondSection').css({'margin-left': '0'});
+                        $('.secondSection').css({'margin-right': '0'});
+                        $('.secondSection').css({'padding-right': '0'});
+                        $('.secondSection').css({'padding-left': '0'});
+                        $('.navDiv').css({'margin-left': '0'});
+                        $('.navDiv').css({'margin-right': '0'});
+                        $('.navDiv').css({'padding-right': '0'});
+                        $('.navDiv').css({'padding-left': '0'});
+                        $('#registrationDiv1').css({'width': '80%'});
+                        $('#registrationDiv1').css({'margin-left': '20px'});
+                        $('#orderReviewDiv1').css({'height': '70%'});
+                        $('#country1').css({'width': '45px'});
+                    }else {
+                        $('#containerDiv1').css({'flex-direction': 'row'});
+                    }
+                }
+            var x = window.matchMedia("(max-width: 1000px)");
+            if(event.data === 'Hide'){
+                myFunction(x);
+                x.addEventListener("change", function() {
+                myFunction(x);
+                });
+            }
+        }
+        window.addEventListener('message', receiveMessage, false);
+        console.log('listener added');
+    </script>
 </head>
 <body>
     <div class="thankYouContainer" id="thankYouContainer">
