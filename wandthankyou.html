@@ -5,6 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>thank you</title>
     <link rel="stylesheet" href="./thankyoustyle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        function receiveMessage(event){
+            console.log(event.data);
+            function myFunction(x) {
+                    if (x.matches){ // If media query matches
+                        $('.orderConfirmationHeader').css({'margin-left': '10px'});
+                        $('.orderConfirmationHeader').css({'margin-bottom': '50px'});
+                        $('.orderConfirmationParagraph').css({'margin-left': '10px'});
+                        $('.orderConfirmationDiv').css({'width': '100%'});
+                        $('.thankYouDiv').css({'width': '100%'});
+                        $('.thankYouContainer').css({'padding-left': '20px'});
+                        $('.orderConfirmationParagraph').css({'text-align': 'center'});
+                        $('.thankYouDiv').css({'text-align': 'center'});
+                        $('.orderNumber').css({'text-align': 'center'});
+                        $('.orderConfirmationHeader').css({'text-align': 'center'});
+                    }else {
+                        
+                    }
+                }
+            var x = window.matchMedia("(max-width: 750px)");
+            if(event.data === 'Hide'){
+                myFunction(x);
+                x.addEventListener("change", function() {
+                myFunction(x);
+                });
+            }
+        }
+        window.addEventListener('message', receiveMessage, false);
+        console.log('listener added');
+    </script>
 </head>
 <body>
     <div class="thankYouContainer" id="thankYouContainer">
