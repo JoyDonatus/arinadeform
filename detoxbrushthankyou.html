@@ -9,8 +9,8 @@
     <script>
         function receiveMessage(event){
             console.log(event.data);
-            function myFunction(x) {
-                    if (x.matches){ // If media query matches
+            function myFunction(y) {
+                    if (y.matches){ // If media query matches
                         $('#orderConfirmationHeader3').css({'margin-left': '10px'});
                         $('#orderConfirmationHeader3').css({'margin-bottom': '50px'});
                         $('#orderConfirmationParagraph3').css({'margin-left': '10px'});
@@ -23,11 +23,11 @@
                         $('#orderConfirmationHeader3').css({'text-align': 'center'});
                     }
                 }
-            var x = window.matchMedia("(max-width: 750px)");
+            var y = window.matchMedia("(max-width: 750px)");
             if(event.data === 'Hide'){
-                myFunction(x);
-                x.addEventListener("change", function() {
-                myFunction(x);
+                myFunction(y);
+                y.addEventListener("change", function() {
+                myFunction(y);
                 });
             }
         }
