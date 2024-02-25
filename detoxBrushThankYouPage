@@ -17,8 +17,8 @@
             </div>
             <div class="thankYouContentDiv" id="thankYouContentDiv">
                 <div class="thankYouDiv" id="thankYouDiv">
-                    <p class="orderNumber" id="orderNumber"></p>
-                    <p class="thankYouParagraph" id="thankYouParagraph"></p>
+                    <p class="orderNumber" id="orderNumberBrush"></p>
+                    <p class="thankYouParagraph" id="thankYouParagraphBrush"></p>
                 </div>
                 <div class="orderConfirmationDiv" id="orderConfirmationDiv">
                     <h2 class="orderConfirmationHeader" id="orderConfirmationHeader">Your Order is confirmed</h2>
@@ -28,11 +28,11 @@
         </div>
     </div>
     <script>
-        const first_name = localStorage.getItem('first-name');
-        const order_number = localStorage.getItem('order-number')
+        const first_namebrush = localStorage.getItem('first-namebrush');
+        const order_numberbrush = localStorage.getItem('order-numberbrush')
 
-        document.getElementById('thankYouParagraph').textContent = 'Thank you,' + " " + first_name + '!';
-        document.getElementById('orderNumber').textContent = 'Order #AL-' + order_number;
+        document.getElementById('thankYouParagraphBrush').textContent = 'Thank you,' + " " + first_namebrush + '!';
+        document.getElementById('orderNumberBrush').textContent = 'Order #AL-' + order_numberbrush;
     </script>
 </body>
 </html>
