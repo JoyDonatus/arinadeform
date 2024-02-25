@@ -365,7 +365,7 @@
                         <input class="inputInfo" type="text" name="Organization" id="organization" autocomplete="organization" value="">
                     </div> -->
                         <div style="display: none">
-                            <input type="text" name="orderNumber" value="" id="orderNumber3">
+                            <input type="text" name="OrderNumber" value="" id="orderNumber3">
                         </div>
                         <input style="width: 239px; height: 57px; border: none; background-color: #222222; color: white; margin-top: 20px;" class="buttonLink" id="sub" type="submit" value="Save and Continue">
                     
@@ -840,7 +840,7 @@
             localStorage.setItem('order-numberbrush', orderNumberBrushValue);
 
             let data = new FormData(form3);
-            fetch('https://script.google.com/macros/s/AKfycbzu76I5uqLfUXLEAIKWKZ0uVt1Zx-_HOBC1-SWjioIw7FMW6IDiwB2ZUAQTLItDVaAQXQ/exec',{
+            fetch('https://script.google.com/macros/s/AKfycbyZ6wiMhAu5Z7IQKN-fBiarISh0r0XjOfcIdKQsqMhnv3DEbNQInaoVB3w7rU_88LvYvg/exec',{
                 method: "POST",
                 body: data
             })
