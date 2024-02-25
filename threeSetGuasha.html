@@ -72,7 +72,7 @@
                     <h4 class="subSubHeading">CONTACT INFORMATION</h4>
                     <div class="inputDiv">
                         <label for="firstName" class="labels">FirstName</label>
-                        <input class="inputInfo" type="text" name="FirstName" autocomplete="name" id="firstName" required="" value="">
+                        <input class="inputInfo" type="text" name="FirstName" autocomplete="name" id="firstName1" required="" value="">
                     </div>
                     <div class="inputDiv">
                         <label for="lastName" class="labels">LastName</label>
@@ -364,6 +364,9 @@
                         <label for="organization" class="labels">Organization (Optional)</label>
                         <input class="inputInfo" type="text" name="Organization" id="organization" autocomplete="organization" value="">
                     </div> -->
+                    <div style="display: none">
+                        <input type="text" name="orderNumber" value="" id="orderNumber1">
+                    </div>
                         <input style="width: 239px; height: 57px; border: none; background-color: #222222; color: white; margin-top: 20px;" class="buttonLink" id="sub" type="submit" value="Save and Continue">
                     
                     <!--<a class="buttonLink" href="" ><button id="buttonLink" style="width: 239px; height: 57px; background-color: #222222; color: white; margin-top: 20px;" type="">Save and Continue</button></a>-->
@@ -823,6 +826,16 @@
         let form1 = document.querySelector("#form1");
         form1.addEventListener('submit', (e) => {
             e.preventDefault();
+            let orderNumber1 = document.getElementById("orderNumber1");
+            let firstName1 = document.getElementById("firstName1");
+
+            let el1 = Math.floor(Math.random()*1000000);
+
+            const firstNameGuashaValue = firstName1.value;
+            const orderNumberGuashaValue = '#AL-' + orderNumber1.value;
+
+            localStorage.setItem('first-nameguasha', firstNameGuashaValue);
+            localStorage.setItem('order-numberguasha', orderNumberGuashaValue);
             //document.querySelector("#sub").value = "Submitting ..";
             let data = new FormData(form1);
             fetch('https://script.google.com/macros/s/AKfycbwoPiCnvOq6fJRM9Owo-xyh14Lv1q2nFWkAWcza--6nbTOUtWkvEd7V_Ayid_4_E3HQ4g/exec',{
