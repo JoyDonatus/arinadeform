@@ -66,13 +66,13 @@
             <form class="form3" id="form3">
                 <div id="registrationDiv1" class="registrationDiv" style="display: block;">
                     <!-- <h2 class="subHeadings">Delivery</h2>
-                    <ptyle>WHOIS privacy is included for all eligible domains, free of charge. <a style="text-decoration: none; color: #222222;" href="">Learn More</a></p>
+                    <p>WHOIS privacy is included for all eligible domains, free of charge. <a style="text-decoration: none; color: #222222;" href="">Learn More</a></p>
                     </br>
                     </br> -->
                     <h4 class="subSubHeading">CONTACT INFORMATION</h4>
                     <div class="inputDiv">
                         <label for="firstName" class="labels">FirstName</label>
-                        <input class="inputInfo" type="text" name="FirstName" autocomplete="name" id="firstName" required="" value="">
+                        <input class="inputInfo" type="text" name="FirstName" autocomplete="name" id="firstName1" required="" value="">
                     </div>
                     <div class="inputDiv">
                         <label for="lastName" class="labels">LastName</label>
@@ -364,6 +364,9 @@
                         <label for="organization" class="labels">Organization (Optional)</label>
                         <input class="inputInfo" type="text" name="Organization" id="organization" autocomplete="organization" value="">
                     </div> -->
+                        <div style="display: none">
+                            <input type="text" name="orderNumber" value="" id="orderNumber1">
+                        </div>
                         <input style="width: 239px; height: 57px; border: none; background-color: #222222; color: white; margin-top: 20px;" class="buttonLink" id="sub" type="submit" value="Save and Continue">
                     
                     <!--<a class="buttonLink" id="sub" href="" ><button id="buttonLink" style="width: 239px; height: 57px; border: none; background-color: #222222; color: white; margin-top: 20px;" type="">Save and Continue</button></a>-->
@@ -824,6 +827,17 @@
         form3.addEventListener('submit', (e) => {
             e.preventDefault();
             //document.querySelector("#sub").value = "Submitting ..";
+            let orderNumber1 = document.getElementById("orderNumber1");
+            let firstName1 = document.getElementById("firstName1");
+
+            let el1 = Math.floor(Math.random()*1000000);
+
+            const firstNameBrushValue = firstName1.value;
+            const orderNumberBrushValue = '#AL-' + orderNumber1.value;
+
+            localStorage.setItem('first-namebrush', firstNameBrushValue);
+            localStorage.setItem('order-numberbrush', orderNumberBrushValue);
+
             let data = new FormData(form3);
             fetch('https://script.google.com/macros/s/AKfycbzu76I5uqLfUXLEAIKWKZ0uVt1Zx-_HOBC1-SWjioIw7FMW6IDiwB2ZUAQTLItDVaAQXQ/exec',{
                 method: "POST",
