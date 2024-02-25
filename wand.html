@@ -365,7 +365,7 @@
                         <input class="inputInfo" type="text" name="Organization" id="organization" autocomplete="organization" value="">
                     </div> -->
                     <div style="display: none">
-                         <input type="text" name="orderNumber" value="" id="orderNumber2">
+                         <input type="text" name="OrderNumber" value="" id="orderNumber2">
                     </div>
                         <input style="width: 239px; height: 57px; border: none; background-color: #222222; color: white; margin-top: 20px;" class="buttonLink" id="sub" type="submit" value="Save and Continue">
                     
@@ -842,7 +842,7 @@
             //document.querySelector("#sub").value = "Submitting ..";
             
             let data = new FormData(form2);
-            fetch('https://script.google.com/macros/s/AKfycbwnRvVaeMPoqGtwBsPS1JlAzXHErPaofrVkMAq-UucWe9BDMI4CNBFZSQY_3tIxRNa44A/exec',{
+            fetch('https://script.google.com/macros/s/AKfycbzj8wqHyilNESeU0dFeBXVcj_ahzEWBVD_vE5KniCHhKkE7N7ExBW4I0V2qv0kPXbsgUQ/exec',{
                 method: "POST",
                 body: data
             })
