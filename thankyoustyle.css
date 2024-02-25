@@ -82,15 +82,15 @@
       .thankYouParagraph{
             line-height: 1em;
       }
-      .orderConfirmationParagraph, .thankYouDiv, .orderNumber{
+      .orderConfirmationParagraph, .thankYouDiv, .orderNumber, .orderConfirmationHeader{
             text-align: center !important;
       }
       .orderConfirmationHeader{
-            margin-bottom: 10px;
+            margin-bottom: 5px;
       }
 }
 @media only screen and (max-device-width: 400px){
       .orderConfirmationHeader{
-            margin-bottom: 70px;
+            margin-bottom: 30px;
       }
 }
