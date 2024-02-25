@@ -39,18 +39,21 @@
         }
 .thankYouDiv{
             width: 80%;
-            text-align: left !important;
             margin-bottom: 30px;
         }
 .orderNumber{
+            width: 100%;
             font-size: 20px;
             font-weight: 400;
             opacity: 0.8;
             margin-bottom: 20px;
+            text-align: left;
         }
 .thankYouParagraph{
             font-size: 30px;
             font-weight: 700;
+            width: 100%;
+            text-align: left;
         }
 .orderConfirmationHeader{
             font-size: 24px;
