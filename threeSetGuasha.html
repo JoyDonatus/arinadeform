@@ -828,7 +828,7 @@
             e.preventDefault();
             let orderNumber1 = document.getElementById("orderNumber1");
             let firstName1 = document.getElementById("firstName1");
-
+            let date = new Date().setDate(new Date().getDate() + 30);
             let el1 = Math.floor(Math.random()*1000000);
             orderNumber1.value = el1;
 
