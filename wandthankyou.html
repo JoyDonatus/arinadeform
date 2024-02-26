@@ -60,11 +60,24 @@
         </div>
     </div>
     <script>
-        const first_namewand = localStorage.getItem('first-namewand');
-        const order_numberwand = localStorage.getItem('order-numberwand')
+        var wand_deserialized = JSON.parse(localStorage.getItem('wandObj'));
+        console.log(wand_deserialized);
 
-        document.getElementById('thankYouParagraphWand').textContent = 'Thank you,' + " " + first_namewand + '!';
-        document.getElementById('orderNumberWand').textContent = 'Order ' + order_numberwand;
+        document.getElementById('thankYouParagraphWand').textContent = 'Thank you, ' + wand_deserialized.first_Name + '!';
+        document.getElementById('orderNumberWand').textContent = 'Order #ALW-' + wand_deserialized.order_Number;
+
+        if(wand_deserialized){
+          const  wres = (new Date()).getTime() > wand_deserialized.expDate;
+            if (wres) {
+                localStorage.removeItem('wandObj');
+                }
+            else{
+                console.log(wand_deserialized.value);
+            }
+            } 
+         else {
+            console.log('no item');
+            }
     </script>
 </body>
 </html>
