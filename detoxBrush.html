@@ -841,12 +841,12 @@
 
             let data = new FormData(form3);
             fetch('https://script.google.com/macros/s/AKfycbzNr3V70PK4XrkIPiK-FwT8Nkk-SyrrTmKMpAC3rSc9WAfxqn7g2T3Ug_oRkxs4qxpuiw/exec',{
-                method: "POST",
-                body: data,
                 redirect: 'follow',
+                method: "POST",
+                body: JSON.stringify(DATA),
                 headers: {
                     'Content-Type': 'text/plain;charset=utf-8',
-                }
+                },
             })
             .then(res => res.text())
             .then(data => {
