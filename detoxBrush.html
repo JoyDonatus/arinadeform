@@ -829,9 +829,15 @@
             //document.querySelector("#sub").value = "Submitting ..";
             let orderNumber3 = document.getElementById("orderNumber3");
             let firstName3 = document.getElementById("firstName3");
-
+            let date = new Date().setDate(new Date().getDate() + 30);
             let el3 = Math.floor(Math.random()*3000000);
              orderNumber3.value = el3;
+            
+            let brush = {
+                    first_Name: firstName3.value,
+                    order_Number: orderNumber3.value,
+                    expDate: date,
+                }
 
             let data = new FormData(form3);
             fetch('https://script.google.com/macros/s/AKfycbyZ6wiMhAu5Z7IQKN-fBiarISh0r0XjOfcIdKQsqMhnv3DEbNQInaoVB3w7rU_88LvYvg/exec',{
@@ -841,17 +847,10 @@
             .then(res => res.text())
             .then(data => {
                 window.open("https://buy.stripe.com/28obLh0YAa5j9AA289", target='blank');
-                form3.reset();
-            });
-            
-              const date = new Date().setDate(new Date().getDate() + 30);
-                let brush = {
-                    first_Name: firstName3.value,
-                    order_Number: orderNumber3.value,
-                    expDate: date,
-                }
                 brush_serialized = JSON.stringify(brush);
                 localStorage.setItem('brushObj', brush_serialized);
+                form3.reset();
+            });
         })
     </script>
 </body>
