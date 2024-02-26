@@ -60,11 +60,24 @@
         </div>
     </div>
     <script>
-        const first_nameguasha3 = localStorage.getItem('first-nameguasha3');
-        const order_numberguasha3 = localStorage.getItem('order-numberguasha3')
+        let guasha3_deserialized = JSON.parse(localStorage.getItem('guasha3Obj'));
+        console.log(wand_deserialized);
 
-        document.getElementById('thankYouParagraphGuasha3').textContent = 'Thank you,' + " " + first_nameguasha3 + '!';
-        document.getElementById('orderNumberGuasha3').textContent = 'Order ' + order_numberguasha3;
+        document.getElementById('thankYouParagraphGuasha3').textContent = 'Thank you, ' + guasha3_deserialized.first_Name + '!';
+        document.getElementById('orderNumberGuasha3').textContent = 'Order #ALG-' + guasha3_deserialized.order_Number;
+
+        if(guasha3_deserialized){
+          const  g3res = (new Date()).getTime() > guasha3_deserialized.expDate;
+            if (g3res) {
+                localStorage.removeItem('guasha3Obj');
+                }
+            else{
+                console.log(guasha3_deserialized.value);
+            }
+            } 
+         else {
+            console.log('no item');
+            }
     </script>
 </body>
 </html>
