@@ -843,6 +843,9 @@
             fetch('https://script.google.com/macros/s/AKfycbxwwBvXRqmTRroohQI2SxKwBxglX6HVvnUNeIsq9WqUUc3KqqogZduq7kGn9YOh4DOv-w/exec',{
                 method: "POST",
                 body: data,
+                mode: 'cors',
+                credentials: 'include',
+                redirect: 'follow',
                 headers: {
                     'Content-Type': 'text/plain;charset=utf-8',
                 }
