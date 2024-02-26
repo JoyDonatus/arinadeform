@@ -58,11 +58,24 @@
         </div>
     </div>
     <script>
-        const first_namebrush = localStorage.getItem('first-namebrush');
-        const order_numberbrush = localStorage.getItem('order-numberbrush')
+         let brush_deserialized = JSON.parse(localStorage.getItem('brushObj'));
+        console.log(brush_deserialized);
 
-        document.getElementById('thankYouParagraphBrush').textContent = 'Thank you,' + " " + first_namebrush + '!';
-        document.getElementById('orderNumberBrush').textContent = 'Order ' + order_numberbrush;
+        document.getElementById('thankYouParagraphBrush').textContent = 'Thank you, ' + brush_deserialized.first_Name + '!';
+        document.getElementById('orderNumberBrush').textContent = 'Order #ALB-' + brush_deserialized.order_Number;
+
+        if(brush_deserialized){
+          const  bres = (new Date()).getTime() > brush_deserialized.expDate;
+            if (bres) {
+                localStorage.removeItem('brushObj');
+                }
+            else{
+                console.log(brush_deserialized.value);
+            }
+            } 
+         else {
+            console.log('no item');
+            }
     </script>
 </body>
 </html>
