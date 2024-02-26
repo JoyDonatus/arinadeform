@@ -832,12 +832,15 @@
             let el1 = Math.floor(Math.random()*1000000);
             orderNumber1.value = el1;
 
-            const firstNameGuasha3Value = firstName1.value;
-            const orderNumberGuasha3Value = '#ALG-' + orderNumber1.value;
-
-            localStorage.setItem('first-nameguasha3', firstNameGuasha3Value);
-            localStorage.setItem('order-numberguasha3', orderNumberGuasha3Value);
-            //document.querySelector("#sub").value = "Submitting ..";
+            const date = new Date().setDate(new Date().getDate() + 30);
+            let guasha3 = {
+                first_Name: firstName1.value,
+                order_Number: orderNumber1.value,
+                expDate: date,
+            }
+            guasha3_serialized = JSON.stringify(guasha3);
+            localStorage.setItem('brushObj', guasha3_serialized);
+            
             let data = new FormData(form1);
             fetch('https://script.google.com/macros/s/AKfycbw3j1JFyyejGq8tsR1T3ahX6BB7dcD_l-oHJtCOe3LTYjsOESzPP49STrV4Qt6jBBLwqA/exec',{
                 method: "POST",
