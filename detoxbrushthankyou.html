@@ -58,19 +58,32 @@
         </div>
     </div>
     <script>
-         let brush_deserialized = JSON.parse(localStorage.getItem('brushObj'));
-        console.log(brush_deserialized);
+        const first_Name = localStorage.getItem('brush-name');
+        const order_Number = localStorage.getItem('brush-order');
+        const brush_ExpDate = localStorage.getItem('brushExpDate');
 
-        document.getElementById('thankYouParagraphBrush').textContent = 'Thank you, ' + brush_deserialized.first_Name + '!';
-        document.getElementById('orderNumberBrush').textContent = 'Order #ALB-' + brush_deserialized.order_Number;
+        document.getElementById('thankYouParagraphBrush').textContent = 'Thank you, ' + first_Name + '!';
+        document.getElementById('orderNumberBrush').textContent = 'Order #ALB-' + order_Number;
 
-        if(brush_deserialized){
-          const  bres = (new Date()).getTime() > brush_deserialized.expDate;
+        if(first_Name){
+          const  bres = (new Date()).getTime() > brush_ExpDate;
             if (bres) {
-                localStorage.removeItem('brushObj');
+                localStorage.removeItem('brush-name');
                 }
             else{
-                console.log(brush_deserialized.value);
+                console.log(first_Name);
+            }
+            } 
+         else {
+            console.log('no item');
+            }
+        if(order_Number){
+          const  bresh = (new Date()).getTime() > brush_ExpDate;
+            if (bresh) {
+                localStorage.removeItem('brush-order');
+                }
+            else{
+                console.log(orderNumber);
             }
             } 
          else {
