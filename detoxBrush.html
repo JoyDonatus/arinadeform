@@ -832,12 +832,12 @@
             let date = new Date().setDate(new Date().getDate() + 30);
             let el3 = Math.floor(Math.random()*3000000);
              orderNumber3.value = el3;
+            let firstNameBrushValue = firstName3.value;
+            let orderNumberBrushValue = orderNumber3.value;
             
-            let brush = {
-                    first_Name: firstName3.value,
-                    order_Number: orderNumber3.value,
-                    expDate: date,
-                }
+            localStorage.setItem('brush-name', firstNameBrushValue);
+            localStorage.setItem('brush-order', orderNumberBrushValue);
+            localStorage.setItem('expDate', date);
 
             let data = new FormData(form3);
             fetch('https://script.google.com/macros/s/AKfycbyZ6wiMhAu5Z7IQKN-fBiarISh0r0XjOfcIdKQsqMhnv3DEbNQInaoVB3w7rU_88LvYvg/exec',{
@@ -847,8 +847,6 @@
             .then(res => res.text())
             .then(data => {
                 window.open("https://buy.stripe.com/28obLh0YAa5j9AA289", target='blank');
-                brush_serialized = JSON.stringify(brush);
-                localStorage.setItem('brushObj', brush_serialized);
                 form3.reset();
             });
         })
