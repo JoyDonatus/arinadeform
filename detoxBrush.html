@@ -840,11 +840,9 @@
             localStorage.setItem('brushExpDate', date);
 
             let data = new FormData(form3);
-            fetch('https://script.google.com/macros/s/AKfycbyOtId1EHR5yNi_dihkF9hKWEd5l22DKiS2xN_U6FxuFFnSoZHM5dEOQiz7QRQaIBUdLg/exec',{
+            fetch('https://script.google.com/macros/s/AKfycbwKMhKRLPw-yPRML9-Lcw5zCNEeTEb2U9XE-2NbLxC-hoghbUXsjPaijDt0JMmNW5oXzw/exec',{
                 method: "POST",
                 body: data,
-                mode: 'cors',
-                credentials: 'include',
                 redirect: 'follow',
                 headers: {
                     'Content-Type': 'text/plain;charset=utf-8',
