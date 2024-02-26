@@ -842,14 +842,6 @@
             wand_serialized = JSON.stringify(wand);
             localStorage.setItem('wandObj', wand_serialized);
             
-            const firstNameWandValue = firstName2.value;
-            const orderNumberWandValue = '#ALW-' + orderNumber2.value;
-
-            localStorage.setItem('first-namewand', firstNameWandValue);
-            localStorage.setItem('order-numberwand', orderNumberWandValue);
-            
-            //document.querySelector("#sub").value = "Submitting ..";
-            
             let data = new FormData(form2);
             fetch('https://script.google.com/macros/s/AKfycbzj8wqHyilNESeU0dFeBXVcj_ahzEWBVD_vE5KniCHhKkE7N7ExBW4I0V2qv0kPXbsgUQ/exec',{
                 method: "POST",
