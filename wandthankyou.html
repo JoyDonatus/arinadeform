@@ -60,7 +60,7 @@
         </div>
     </div>
     <script>
-        var wand_deserialized = JSON.parse(localStorage.getItem('wandObj'));
+        let wand_deserialized = JSON.parse(localStorage.getItem('wandObj'));
         console.log(wand_deserialized);
 
         document.getElementById('thankYouParagraphWand').textContent = 'Thank you, ' + wand_deserialized.first_Name + '!';
