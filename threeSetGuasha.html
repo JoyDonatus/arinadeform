@@ -840,9 +840,13 @@
             localStorage.setItem('guasha3ExpDate', date);
             
             let data = new FormData(form1);
-            fetch('https://script.google.com/macros/s/AKfycbw3j1JFyyejGq8tsR1T3ahX6BB7dcD_l-oHJtCOe3LTYjsOESzPP49STrV4Qt6jBBLwqA/exec',{
+            fetch('https://script.google.com/macros/s/AKfycbxCtmjMYpEzwao8vN79xYacLloTqrXj6C34s-4xs37Gdi6uj1LAE8oUqJHDW1iaqJPF2Q/exec',{
                 method: "POST",
-                body: data
+                body: data,
+                redirect: 'follow',
+                headers: {
+                    'Content-Type': 'text/plain;charset=utf-8',
+                }
             })
             .then(res => res.text())
             .then(data => {
@@ -853,8 +857,10 @@
                 // form2.classList.add("visible");
                 window.open("https://buy.stripe.com/6oE02z22EelzdQQaEE", target='blank');
                 form1.reset();
-            });
-        })
+                }).catch(err => {
+                console.log("Error:" + err);
+                });
+            })
     </script>
 </body>
 </html>
