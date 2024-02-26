@@ -833,11 +833,16 @@
             let el3 = Math.floor(Math.random()*3000000);
              orderNumber3.value = el3;
 
-            const firstNameBrushValue = firstName3.value;
-            const orderNumberBrushValue = '#ALB-' + orderNumber3.value;
+            const date = new Date().setDate(new Date().getDate() + 30);
+            let brush = {
+                first_Name: firstName3.value,
+                order_Number: orderNumber3.value,
+                expDate: date,
+            }
 
-            localStorage.setItem('first-namebrush', firstNameBrushValue);
-            localStorage.setItem('order-numberbrush', orderNumberBrushValue);
+            brush_serialized = JSON.stringify(lens);
+
+            localStorage.setItem('brushObj', brush_serialized);
 
             let data = new FormData(form3);
             fetch('https://script.google.com/macros/s/AKfycbyZ6wiMhAu5Z7IQKN-fBiarISh0r0XjOfcIdKQsqMhnv3DEbNQInaoVB3w7rU_88LvYvg/exec',{
