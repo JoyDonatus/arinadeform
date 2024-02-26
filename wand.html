@@ -832,6 +832,15 @@
 
             let el2 = Math.floor(Math.random()*2000000);
             orderNumber2.value = el2;
+
+            const date = new Date().setDate(new Date().getDate() + 30);
+            let wand = {
+                first_Name: firstName2.value,
+                order_Number: orderNumber2.value,
+                expDate: date,
+            }
+            wand_serialized = JSON.stringify(wand);
+            localStorage.setItem('wandObj', wand_serialized);
             
             const firstNameWandValue = firstName2.value;
             const orderNumberWandValue = '#ALW-' + orderNumber2.value;
