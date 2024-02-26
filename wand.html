@@ -841,9 +841,13 @@
             localStorage.setItem('wandExpDate', date);
             
             let data = new FormData(form2);
-            fetch('https://script.google.com/macros/s/AKfycbzj8wqHyilNESeU0dFeBXVcj_ahzEWBVD_vE5KniCHhKkE7N7ExBW4I0V2qv0kPXbsgUQ/exec',{
+            fetch('https://script.google.com/macros/s/AKfycbz_OoCJFZPV7l2sSfL7ER_o9IxBGX9sex8xfQUbjtF-VobnztGD1arIeXBHqWprbhdKhg/exec',{
                 method: "POST",
-                body: data
+                body: data,
+                redirect: 'follow',
+                headers: {
+                    'Content-Type': 'text/plain;charset=utf-8',
+                }
             })
             .then(res => res.text())
             .then(data => {
@@ -854,6 +858,8 @@
                 // form2.classList.add("visible");
                 window.open("https://buy.stripe.com/eVaaHd0YA91f4ggcMO", target='blank'); "";
                 form2.reset();
+            }).catch(err => {
+                console.log("Error:" + err);
             });
         })
     </script>
