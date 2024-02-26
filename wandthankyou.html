@@ -60,19 +60,32 @@
         </div>
     </div>
     <script>
-        let wand_deserialized = JSON.parse(localStorage.getItem('wandObj'));
-        console.log(wand_deserialized);
+        const first_Name = localStorage.getItem('wand-name');
+        const order_Number = localStorage.getItem('wand-order');
+        const wand_ExpDate = localStorage.getItem('wandExpDate');
 
-        document.getElementById('thankYouParagraphWand').textContent = 'Thank you, ' + wand_deserialized.first_Name + '!';
-        document.getElementById('orderNumberWand').textContent = 'Order #ALW-' + wand_deserialized.order_Number;
+        document.getElementById('thankYouParagraphWand').textContent = 'Thank you, ' + first_Name + '!';
+        document.getElementById('orderNumberWand').textContent = 'Order #ALW-' + order_Number;
 
-        if(wand_deserialized){
-          const  wres = (new Date()).getTime() > wand_deserialized.expDate;
+        if(first_Name){
+          const  wres = (new Date()).getTime() > wand_ExpDate;
             if (wres) {
-                localStorage.removeItem('wandObj');
+                localStorage.removeItem('wand-name');
                 }
             else{
-                console.log(wand_deserialized.value);
+                console.log(first_Name);
+            }
+            } 
+         else {
+            console.log('no item');
+            }
+        if(order_Number){
+          const  wresh = (new Date()).getTime() > wand_ExpDate;
+            if (wresh) {
+                localStorage.removeItem('wand-order');
+                }
+            else{
+                console.log(orderNumber);
             }
             } 
          else {
