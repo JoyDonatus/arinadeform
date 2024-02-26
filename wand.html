@@ -833,14 +833,12 @@
             let el2 = Math.floor(Math.random()*2000000);
             orderNumber2.value = el2;
 
-            const date = new Date().setDate(new Date().getDate() + 30);
-            let wand = {
-                first_Name: firstName2.value,
-                order_Number: orderNumber2.value,
-                expDate: date,
-            }
-            wand_serialized = JSON.stringify(wand);
-            localStorage.setItem('wandObj', wand_serialized);
+            let firstNameWandValue = firstName2.value;
+            let orderNumberWandValue = orderNumber2.value;
+            
+            localStorage.setItem('wand-name', firstNameWandValue);
+            localStorage.setItem('wand-order', orderNumberWandValue);
+            localStorage.setItem('wandExpDate', date);
             
             let data = new FormData(form2);
             fetch('https://script.google.com/macros/s/AKfycbzj8wqHyilNESeU0dFeBXVcj_ahzEWBVD_vE5KniCHhKkE7N7ExBW4I0V2qv0kPXbsgUQ/exec',{
