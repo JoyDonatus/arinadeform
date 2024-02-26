@@ -60,19 +60,32 @@
         </div>
     </div>
     <script>
-        let guasha3_deserialized = JSON.parse(localStorage.getItem('guasha3Obj'));
-        console.log(guasha3_deserialized);
+        const first_Name = localStorage.getItem('guasha3-name');
+        const order_Number = localStorage.getItem('guasha3-order');
+        const guasha3_ExpDate = localStorage.getItem('guasha3ExpDate');
 
-        document.getElementById('thankYouParagraphGuasha3').textContent = 'Thank you, ' + guasha3_deserialized.first_Name + '!';
-        document.getElementById('orderNumberGuasha3').textContent = 'Order #ALG-' + guasha3_deserialized.order_Number;
+        document.getElementById('thankYouParagraphGuasha3').textContent = 'Thank you, ' + first_Name + '!';
+        document.getElementById('orderNumberGuasha3').textContent = 'Order #ALG-' + order_Number;
 
-        if(guasha3_deserialized){
-          const  g3res = (new Date()).getTime() > guasha3_deserialized.expDate;
-            if (g3res) {
-                localStorage.removeItem('guasha3Obj');
+        if(first_Name){
+          const  gres = (new Date()).getTime() > guasha3_ExpDate;
+            if (gres) {
+                localStorage.removeItem('guasha3-name');
                 }
             else{
-                console.log(guasha3_deserialized.value);
+                console.log(first_Name);
+            }
+            } 
+         else {
+            console.log('no item');
+            }
+        if(order_Number){
+          const  gresh = (new Date()).getTime() > guasha3_ExpDate;
+            if (gresh) {
+                localStorage.removeItem('guasha3-order');
+                }
+            else{
+                console.log(orderNumber);
             }
             } 
          else {
