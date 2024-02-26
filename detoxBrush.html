@@ -833,17 +833,6 @@
             let el3 = Math.floor(Math.random()*3000000);
              orderNumber3.value = el3;
 
-            const date = new Date().setDate(new Date().getDate() + 30);
-            let brush = {
-                first_Name: firstName3.value,
-                order_Number: orderNumber3.value,
-                expDate: date,
-            }
-
-            brush_serialized = JSON.stringify(brush);
-
-            localStorage.setItem('brushObj', brush_serialized);
-
             let data = new FormData(form3);
             fetch('https://script.google.com/macros/s/AKfycbyZ6wiMhAu5Z7IQKN-fBiarISh0r0XjOfcIdKQsqMhnv3DEbNQInaoVB3w7rU_88LvYvg/exec',{
                 method: "POST",
@@ -851,11 +840,14 @@
             })
             .then(res => res.text())
             .then(data => {
-                // firstNavigationArrow.disabled = false;
-                // paymentLink.disabled = false;
-                // form1.classList.add("hidden");
-                // form2.classList.remove("hidden");
-                // form2.classList.add("visible");
+                const date = new Date().setDate(new Date().getDate() + 30);
+                let brush = {
+                    first_Name: firstName3.value,
+                    order_Number: orderNumber3.value,
+                    expDate: date,
+                }
+                brush_serialized = JSON.stringify(brush);
+                localStorage.setItem('brushObj', brush_serialized);
                 window.open("https://buy.stripe.com/28obLh0YAa5j9AA289", target='blank');
                 form3.reset();
             });
