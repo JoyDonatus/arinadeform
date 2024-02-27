@@ -71,32 +71,32 @@
                     </br> -->
                     <h4 class="subSubHeading">CONTACT INFORMATION</h4>
                     <div class="inputDiv">
-                        <label for="firstName" class="labels">FirstName</label>
-                        <input class="inputInfo" type="text" name="FirstName" autocomplete="name" id="firstName2" required="" value="">
+                        <label for="firstName" class="labels">First Name</label>
+                        <input class="inputInfo" type="text" name="First Name" autocomplete="given-name" id="firstName2" required="" value="">
                     </div>
                     <div class="inputDiv">
-                        <label for="lastName" class="labels">LastName</label>
-                        <input class="inputInfo" type="text" name="LastName" autocomplete="cc-family-name" id="lastName" required="" value="">
+                        <label for="lastName" class="labels">Last Name</label>
+                        <input class="inputInfo" type="text" name="Last Name" autocomplete="cc-family-name" id="lastName" required="" value="">
                     </div>
                     <div class="inputDiv">
-                        <label for="emailAddress" class="labels">EmailAddress</label>
-                        <input class="inputInfo" type="email" autocomplete="email" name="EmailAddress" id="emailAddress" required="" value="">
+                        <label for="emailAddress" class="labels">Email Address</label>
+                        <input class="inputInfo" type="email" autocomplete="email" name="Email Address" id="emailAddress" required="" value="">
                     </div>
                     <div class="telPhoneInputDiv">
-                        <label for="phone" class="labels">PhoneNumber</label>
-                        <input class="inputInfo" id="phone" style="width: 100%;" type="tel" autocomplete="tel" name="PhoneNumber" required="" value="" />
+                        <label for="phone" class="labels">Phone Number</label>
+                        <input class="inputInfo" id="phone" style="width: 100%;" type="tel" autocomplete="tel" name="Phone Number" required="" value="" />
                         <div class="alert alert-info" style="display: none;"></div>
                     </div>
                     </br>
                     </br>
                     <h4 class="subSubHeading">ADDRESS</h4>
                     <div class="inputDiv1">
-                        <label for="address" class="labels">StreetAddress</label>
-                        <input class="inputInfo" type="address" name="Address" id="address" autocomplete="address-line1" required="" value="">
+                        <label for="address" class="labels">Street Address</label>
+                        <input class="inputInfo" type="text" name="Address" id="address" autocomplete="address-line1" required="" value="">
                     </div>
                     <div class="inputDiv1">
                         <label for="apt_suite" class="labels">Apt/Suite (Optional)</label>
-                        <input class="inputInfo" type="text" id="apt_suite" name="Apt_Suite" value="">
+                        <input class="inputInfo" type="text" id="apt_suite" name="Apt/Suite" value="">
                     </div>
                     <div class="inputDiv1">
                         <label for="city" class="labels">City</label>
@@ -840,26 +840,37 @@
             localStorage.setItem('wand-order', orderNumberWandValue);
             localStorage.setItem('wandExpDate', date);
             
-            let data = new FormData(form2);
-            fetch('https://script.google.com/macros/s/AKfycbz_OoCJFZPV7l2sSfL7ER_o9IxBGX9sex8xfQUbjtF-VobnztGD1arIeXBHqWprbhdKhg/exec',{
-                method: "POST",
-                body: data,
+            //let data = new FormData(form2);
+            var formData = new FormData(form2);
+            var keyValuePairs = [];
+            for (var pair of formData.entries()) {
+              keyValuePairs.push(pair[0] + "=" + pair[1]);
+            }
+
+            var formDataString = keyValuePairs.join("&");
+            
+            fetch('https://script.google.com/macros/s/AKfycbzamlCpY7Yo6ne3uI_4PrST2mIch_JSUL9xeo95mqL8iL4GAXi-NpZRkFJ_ep3N-R1sag/exec',{
                 redirect: 'follow',
+                method: "POST",
+                body: formDataString,
                 headers: {
                     'Content-Type': 'text/plain;charset=utf-8',
-                }
+                },
             })
-            .then(res => res.text())
-            .then(data => {
-                // firstNavigationArrow.disabled = false;
-                // paymentLink.disabled = false;
-                // form1.classList.add("hidden");
-                // form2.classList.remove("hidden");
-                // form2.classList.add("visible");
-                window.open("https://buy.stripe.com/eVaaHd0YA91f4ggcMO", target='blank'); "";
-                form2.reset();
-            }).catch(err => {
-                console.log("Error:" + err);
+            //.then(res => res.text())
+            .then(function (response) {
+            // Check if the request was successful
+            if (response) {
+              return response; // Assuming your script returns JSON response
+            } else {
+              throw new Error("Failed to submit the form.");
+            }
+          })
+            .then(function (data) {
+                window.open("https://buy.stripe.com/eVaaHd0YA91f4ggcMO", target='blank');
+                form3.reset();
+            }).catch(function (error) {
+                console.error(error);
             });
         })
     </script>
