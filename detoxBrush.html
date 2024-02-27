@@ -839,21 +839,37 @@
             localStorage.setItem('brush-order', orderNumberBrushValue);
             localStorage.setItem('brushExpDate', date);
 
-            let data = new FormData(form3);
-            fetch('https://script.google.com/macros/s/AKfycbyTwzt7GY2sOGh4IGZGnvO7AXISjErGCQIvrDTvmk1MqjodowDMFE5LYwArxlJgT54eCA/exec',{
+           // let data = new FormData(form3);
+            var formData = new FormData(form3);
+            var keyValuePairs = [];
+            for (var pair of formData.entries()) {
+              keyValuePairs.push(pair[0] + "=" + pair[1]);
+            }
+
+        var formDataString = keyValuePairs.join("&");
+            
+            fetch('https://script.google.com/macros/s/AKfycbw-q4wMboGSfjkPm-gYvPtJ6k_cnUizk8TXQjSSvG-P5sx0V84N0khFm1C3z_jQScq5cA/exec',{
                 redirect: 'follow',
                 method: "POST",
-                body: data,
+                body: formDataString,
                 headers: {
                     'Content-Type': 'text/plain;charset=utf-8',
                 },
             })
-            .then(res => res.text())
-            .then(data => {
+            //.then(res => res.text())
+            .then(function (response) {
+            // Check if the request was successful
+            if (response) {
+              return response; // Assuming your script returns JSON response
+            } else {
+              throw new Error("Failed to submit the form.");
+            }
+          })
+            .then(function (data) {
                 window.open("https://buy.stripe.com/28obLh0YAa5j9AA289", target='blank');
                 form3.reset();
-            }).catch(err => {
-                console.log("Error:" + err);
+            }).catch(function (error) {
+                console.error(error);
             });
         })
     </script>
