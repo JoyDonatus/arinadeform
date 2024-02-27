@@ -839,28 +839,39 @@
             localStorage.setItem('guasha3-order', orderNumberGuasha3Value);
             localStorage.setItem('guasha3ExpDate', date);
             
-            let data = new FormData(form1);
-            fetch('https://script.google.com/macros/s/AKfycbxCtmjMYpEzwao8vN79xYacLloTqrXj6C34s-4xs37Gdi6uj1LAE8oUqJHDW1iaqJPF2Q/exec',{
-                method: "POST",
-                body: data,
+            //let data = new FormData(form1);
+            var formData = new FormData(form1);
+            var keyValuePairs = [];
+            for (var pair of formData.entries()) {
+              keyValuePairs.push(pair[0] + "=" + pair[1]);
+            }
+
+        var formDataString = keyValuePairs.join("&");
+            
+            fetch('https://script.google.com/macros/s/AKfycbyyOWv8JGjloPojXCQGzSkNL9dxI8yL0JHuHRYAsE5D3XmK2aXDEpzoRcvGYmRoBNB7xQ/exec',{
                 redirect: 'follow',
+                method: "POST",
+                body: formDataString,
                 headers: {
                     'Content-Type': 'text/plain;charset=utf-8',
-                }
+                },
             })
-            .then(res => res.text())
-            .then(data => {
-                // firstNavigationArrow.disabled = false;
-                // paymentLink.disabled = false;
-                // form1.classList.add("hidden");
-                // form2.classList.remove("hidden");
-                // form2.classList.add("visible");
-                window.open("https://buy.stripe.com/6oE02z22EelzdQQaEE", target='blank');
-                form1.reset();
-                }).catch(err => {
-                console.log("Error:" + err);
-                });
-            })
+            //.then(res => res.text())
+            .then(function (response) {
+            // Check if the request was successful
+            if (response) {
+              return response; // Assuming your script returns JSON response
+            } else {
+              throw new Error("Failed to submit the form.");
+            }
+          })
+            .then(function (data) {
+                window.open("https://buy.stripe.com/28obLh0YAa5j9AA289", target='blank');
+                form3.reset();
+            }).catch(function (error) {
+                console.error(error);
+            });
+        })
     </script>
 </body>
 </html>
