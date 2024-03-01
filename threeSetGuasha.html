@@ -367,9 +367,9 @@
                     <div style="display: none">
                         <input type="text" name="OrderNumber" value="" id="orderNumber1">
                     </div>
-                        <input style="width: 239px; height: 57px; border: none; background-color: #222222; color: white; margin-top: 20px;" class="buttonLink" id="sub" type="submit" value="Save and Continue">
+                        <!--<input style="width: 239px; height: 57px; border: none; background-color: #222222; color: white; margin-top: 20px;" class="buttonLink" id="sub" type="submit" value="Save and Continue">-->
                     
-                    <!--<a class="buttonLink" href="" ><button id="buttonLink" style="width: 239px; height: 57px; background-color: #222222; color: white; margin-top: 20px;" type="">Save and Continue</button></a>-->
+                    <a id="newLink" class="buttonLink" href=""><input id="buttonLink" style="width: 239px; height: 57px; background-color: #222222; color: white; margin-top: 20px;" type="submit" value="Save and Continue"></a>
                 </div>
             </form>
            <!--<form class="form1 hidden" id="form2">
@@ -824,6 +824,7 @@
         // const reviewDiv = document.querySelector("#reviewDiv");
         //const sub = document.querySelector("#sub");
         let form1 = document.querySelector("#form1");
+        let newLink = document.querySelector("#newLink");
         form1.addEventListener('submit', (e) => {
             e.preventDefault();
             let orderNumber1 = document.getElementById("orderNumber1");
@@ -866,7 +867,7 @@
             }
           })
             .then(function (data) {
-                window.location.replace("https://buy.stripe.com/6oE02z22EelzdQQaEE");
+                newLink.href="https://buy.stripe.com/6oE02z22EelzdQQaEE";
                 //window.location.href=("https://buy.stripe.com/6oE02z22EelzdQQaEE");
                 //window.open("https://buy.stripe.com/6oE02z22EelzdQQaEE", "_blank", "noopener, noreferrer");
                 form1.reset();
