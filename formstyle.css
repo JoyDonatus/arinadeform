@@ -252,15 +252,15 @@ select > options{
     height: 100%;
 }
 
-#sub{
+#sub, #backToProducts{
     transition: all .5s ease-in-out;
 }
 
-#sub:hover {
+#sub:hover, #backToProducts:hover{
     transform: scale(1.07);
     cursor: pointer;
 }
-#sub{
+#sub, #backToProducts{
     transition: all .3s ease-in-out;
 }
 
