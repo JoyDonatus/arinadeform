@@ -99,7 +99,7 @@ select > options{
     padding-right: 40px;
 }
 
-#backToProductsDiv{
+#backDiv{
     position: absolute;
     top: 20px;
     left: 70%;
