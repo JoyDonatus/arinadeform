@@ -266,8 +266,12 @@ select > options{
     transition: all .5s ease-in-out;
 }
 
-#sub:hover, #backToProducts:hover{
+#sub:hover{
     transform: scale(1.07);
+    cursor: pointer;
+}
+#backToProducts:hover{
+    transform: scale(1.03);
     cursor: pointer;
 }
 #sub, #backToProducts{
