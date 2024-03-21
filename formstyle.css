@@ -271,7 +271,7 @@ select > options{
     cursor: pointer;
 }
 #backToProducts:hover{
-    transform: scale(1.03);
+    transform: scale(1.09);
     cursor: pointer;
 }
 #sub, #backToProducts{
