@@ -47,7 +47,7 @@
 <body class="fullBody">
     <section class="navDiv" style="border: none;">
         <div id="backDiv">
-            <a class="navLink backToProducts" href="https://arinade.com/#products" target="_top"><img src="./Project Pictures/free-arrow-left-icon-3099-thumb-removebg-preview.png" width="25" height="25" id="backToProducts" alt="back to products"></a>
+            <a class="navLink backToProducts" href="https://arinade.com/#products" id="backToProductsAnchor" target="_top"><img src="./Project Pictures/free-arrow-left-icon-3099-thumb-removebg-preview.png" width="25" height="25" id="backToProducts" alt="back to products"></a>
        </div>
         <div>
             <a class="navLink" href=""><button id="registrationLink">DELIVERY</button></a>
@@ -823,6 +823,7 @@
         const inputDiv = document.getElementsByClassName("inputDiv");
         const telPhoneInputDiv = document.querySelector(".telPhoneInputDiv");
         const inputDiv1 = document.getElementsByClassName("inputDiv1");
+        const backToProductsAnchor = document.getElementById("backToProductsAnchor");
 
         const firstName3 = document.querySelector("#firstName3");
         const lastName = document.querySelector("#lastName");
@@ -861,6 +862,9 @@
         inputDiv1[4].addEventListener("click", function() {
             postalCode.focus();
         });
+        backToProductsAnchor.addEventListener("click", function() {
+            window.open("https://arinade.com/#products", "_top")
+        })
         
 
         let form3 = document.querySelector("#form3");
