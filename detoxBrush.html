@@ -87,7 +87,7 @@
                     </div>
                     <div class="telPhoneInputDiv">
                         <label for="phone" class="labels">Phone Number</label>
-                        <input class="inputInfo" id="phone" style="width: 100%;" type="tel" autocomplete="tel" name="Phone Number" required="" value="">
+                        <input class="inputInfo" id="phone" type="tel" autocomplete="tel" name="Phone Number" required="" value="">
                         <div class="alert alert-info" style="display: none;"></div>
                     </div>
                     </br>
@@ -773,7 +773,12 @@
 
             const phoneInput = window.intlTelInput(phoneInputField, {
                 initialCountry: "auto",
-                geoIpLookup: getIp,
+                geoIpLookup: callback => {
+                fetch("https://ipapi.co/json")
+                .then(res => res.json())
+                .then(data => callback(data.country_code))
+                .catch(() => callback("us"));
+                },
                 utilsScript:
                 "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
             });

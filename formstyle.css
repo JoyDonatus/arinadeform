@@ -92,6 +92,12 @@ select > options{
     margin-bottom: 10px;
 }
 
+.iti--allow-dropdown input, .iti--allow-dropdown input[type=text], .iti--allow-dropdown input[type=tel], .iti--separate-dial-code input, .iti--separate-dial-code input[type=text], .iti--separate-dial-code input[type=tel] {
+    padding-right: 30px;
+    padding-left: 25% !important;
+    margin-left: 0;
+}
+
 .navDiv{
     display: flex;
     width: 100%;
@@ -307,5 +313,9 @@ select > options{
     #registrationDiv, #registrationDiv1, #registrationDiv2{
         width: 80% !important;
         margin-left: 30px !important;
+    }
+
+    .iti--allow-dropdown input, .iti--allow-dropdown input[type=text], .iti--allow-dropdown input[type=tel], .iti--separate-dial-code input, .iti--separate-dial-code input[type=text], .iti--separate-dial-code input[type=tel] {
+        padding-left: 23% !important;
     }
 }
