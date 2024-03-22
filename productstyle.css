@@ -5,6 +5,13 @@
     background-color: #F6F6F6;
 }
 
+#backButton{
+    margin-top: 30px;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
 .visible{
     display: block;
 }
