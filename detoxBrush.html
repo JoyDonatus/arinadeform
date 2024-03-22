@@ -95,11 +95,11 @@
                     <h4 class="subSubHeading">ADDRESS</h4>
                     <div class="inputDiv1">
                         <label for="address1" class="labels">Address Line 1</label>
-                        <input class="inputInfo" type="text" id="address1" autocomplete="address-line1" name="Address" required="" value="">
+                        <input class="inputInfo" type="text" id="address1" autocomplete="address-line1" name="Address Line 1" required="" value="">
                     </div>
                     <div class="inputDiv1">
                         <label for="address2" class="labels">Address Line 2</label>
-                        <input class="inputInfo" type="text" id="address2" autocomplete="address-line1" name="Address" value="">
+                        <input class="inputInfo" type="text" id="address2" autocomplete="address-line2" name="Address Line 2" value="">
                     </div>
                     <div class="inputDiv1">
                         <label for="city" class="labels">City</label>
@@ -823,10 +823,10 @@
         const lastName = document.querySelector("#lastName");
         const emailAddress = document.querySelector("#emailAddress");
         const phone = document.querySelector("#phone");
-        const address = document.querySelector("#address");
-        const aptSuite = document.querySelector("#apt_suite");
+        const address1 = document.querySelector("#address1");
+        const address2 = document.querySelector("#address2");
         const city = document.querySelector("#city");
-        const state = document.querySelector("#state");
+        const county = document.querySelector("#county");
         const postalCode = document.querySelector("#postalCode");
 
         inputDiv[0].addEventListener("click", function() {
@@ -842,16 +842,16 @@
             phone.focus();
         });
         inputDiv1[0].addEventListener("click", function() {
-            address.focus();
+            address1.focus();
         });
         inputDiv1[1].addEventListener("click", function() {
-            aptSuite.focus();
+            address2.focus();
         });
         inputDiv1[2].addEventListener("click", function() {
             city.focus();
         });
         inputDiv1[3].addEventListener("click", function() {
-            state.focus();
+            county.focus();
         });
         inputDiv1[4].addEventListener("click", function() {
             postalCode.focus();
