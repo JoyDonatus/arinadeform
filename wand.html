@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Document</title>
     <link rel="stylesheet" href="./formstyle.css">
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@20.2.0/build/css/intlTelInput.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
         function receiveMessage(event){
@@ -87,7 +85,7 @@
                     </div>
                     <div class="telPhoneInputDiv">
                         <label for="phone" class="labels">Phone Number</label>
-                        <input class="inputInfo" id="phone" style="width: 100%;" type="tel" autocomplete="tel" name="Phone Number" required="" value="" />
+                        <input class="inputInfo" id="phone" type="tel" name="Phone Number" required="" value="" />
                         <div class="alert alert-info" style="display: none;"></div>
                     </div>
                     </br>
@@ -362,6 +360,9 @@
                         <option value="Zambia">Zambia</option>
                         <option value="Zimbabwe">Zimbabwe</option>
                         </select>
+                    </div>
+                    <div class="deliveryCountry" style="padding-left: 5px;">
+                        We currently only deliver within the UK
                     </div>
                     <!-- <div class="inputDiv1">
                         <label for="organization" class="labels">Organization (Optional)</label>
@@ -721,12 +722,12 @@
             <!--</form>-->
             <div id="orderReview" class="orderReview" style="width: 100%;">
                 <div id="orderReviewDiv2" style=" background-color: white; width:50%; height: 40%;">
-                    <div style="height: 40px; text-align: left; display: flex; align-items: flex-end; border-bottom: 1px solid rgba(239, 239, 239); padding: 5px;" >
+                    <div style="height: 40px; text-align: left; display: flex; align-items: flex-end; justify-content: space-between; border-bottom: 1px solid rgba(239, 239, 239); padding: 5px;" >
                         <h4 class="summaryTotal">Order Summary</h4>
                     </div> 
-                    <div class="inputDiv" style="height: 100px; margin-bottom: 20px; border-bottom: 1px solid rgba(239, 239, 239);">
+                    <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; height: 100px; margin-bottom: 20px; border-bottom: 1px solid rgba(239, 239, 239); padding: 5px;">
                         <div>
-                            <p style="font-weight: 500; font-size: 14px; line-height: 16.71px;">8 Bead Meridian Massage Wand</p>
+                            <p style="font-weight: 500; font-size: 14px; line-height: 16.71px; padding-bottom: 5px;">8 Bead Meridian Massage Wand</p>
                             <p class="subtotal">One time payment</p>
                         </div>
                         <div>
@@ -753,32 +754,28 @@
             </div>
         </div>
     </section>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@20.2.0/build/js/intlTelInput.min.js"></script>
     <script>
-        const phoneInputField = document.querySelector("#phone");
-        const phoneInput = window.intlTelInput(phoneInputField, {
-          utilsScript:
-            "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+        const phoneInput = document.querySelector("#phone");
+        window.intlTelInput(phoneInput, {
+        utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@20.2.0/build/js/utils.js",
         });
 
-        function getIp(callback) {
-            fetch('https://ipinfo.io/json?token=<your token>', { headers: { 'Accept': 'application/json' }})
-            .then((resp) => resp.json())
-            .catch(() => {
+        intlTelInput(phoneInput, {
+            initialCountry: "auto",
+            hiddenInput: function(telInputName) {
                 return {
-                    country: 'us',
+            phone: "phone_full",
+            country: "country_code"
                 };
-            })
-            .then((resp) => callback(resp.country));
-
-            const phoneInput = window.intlTelInput(phoneInputField, {
-                initialCountry: "NG",
-                geoIpLookup: getIp,
-                utilsScript:
-                "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-            });
-            }
-        
+            },
+            geoIpLookup: function(callback) {
+                fetch("https://ipapi.co/json")
+                .then(function(res) { return res.json(); })
+                .then(function(data) { callback(data.country_code); })
+                .catch(function() { callback(); });
+             }
+        });
     </script>
     <script>
         //const form1 = document.querySelector("#form1");
