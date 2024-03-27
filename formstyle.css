@@ -57,8 +57,10 @@ button{
 .iti__tel-input{
     float: right !important;
 }
+
 #registrationDiv1 > div.telPhoneInputDiv > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > div.iti__flag-container > div.iti__selected-flag > div.iti__flag.iti__globe,
  .iti__a11y-text,
+ .iti__globe,
  #iti-1__dropdown-content > input,
 #registrationDiv2 > div.telPhoneInputDiv > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > div.iti__flag-container > div.iti__selected-flag > div.iti__flag.iti__globe,
 #registrationDiv > div.telPhoneInputDiv > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > div.iti__flag-container > div.iti__selected-flag > div.iti__flag.iti__globe{
