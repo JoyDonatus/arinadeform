@@ -52,14 +52,14 @@ button{
 }
 #phone{
     padding-left: 0 !important;
-    margin-left: 0 !important;
+    margin-left: 25% !important;
 }
-.iti__tel-input{
+/**.iti__tel-input{
     float: right !important;
 }
 .iti__flag-container{
-    margin-right: 20% !important;
-}
+    margin-right: 300px !important;
+}**/
 
 #registrationDiv1 > div.telPhoneInputDiv > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > div.iti__flag-container > div.iti__selected-flag > div.iti__flag.iti__globe,
  .iti__a11y-text,
