@@ -311,6 +311,9 @@ select > options{
     .containerDiv{
         flex-direction: column-reverse !important;
     }
+    #phone{
+        margin-left: 5px;
+    }
 
     .secondSection, .navDiv{
         margin-left: 0 !important;
