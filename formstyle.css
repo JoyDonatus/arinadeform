@@ -44,16 +44,13 @@ button{
     text-decoration: none;
 }
 
-.inputInfo, .inputInfoCountry, #phone{
+.inputInfo, .inputInfoCountry{
     border: none;
     width: 75%;
     text-align: left;
     outline: #FFFFFF00;
 }
-#phone{
-    padding-left: 0 !important;
-    float: right !important;
-}
+
 /**.iti__tel-input{
     margin-left: 25% !important;
     float: right !important;
@@ -68,10 +65,23 @@ button{
  #iti-1__dropdown-content > input{
     display: none !important;
 }
+
+.iti--allow-dropdown input.iti__tel-input{
+    padding-right: 0px !important;
+    margin-right: 22px !important;
+    
+}
+/**.iti--show-selected-dial-code input.iti__tel-input{
+    
+
+}**/
+
+
 #registrationDiv1 > div.telPhoneInputDiv > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown,
 #registrationDiv2 > div.telPhoneInputDiv > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown,
-#registrationDiv > div.telPhoneInputDiv > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown{
+#registrationDiv > div.telPhoneInputDiv > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown > div.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown, #phone{
    width: 100% !important; 
+   
 }
 
 select > options{
